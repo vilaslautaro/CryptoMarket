@@ -1,10 +1,13 @@
 import React from 'react';
 import './cartWidget.css';
-import carrito from '../../../assets/images/carrito.png';
+// import carrito from '../../../assets/images/carrito.png';
 
-function CartWidget(){
+function CartWidget() {
     return (
-        <img className="imgCarrito" alt="carrito" src={carrito} ></img>
+        <div className="cajaCarrito">
+                <i className="imgCarrito fas fa-shopping-cart"></i>
+                <span className='contadorCarrito'>0</span>
+        </div>
     );
 }
 

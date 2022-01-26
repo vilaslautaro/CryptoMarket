@@ -1,12 +1,31 @@
-.imgCarrito{
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
+.cajaCarrito{
     align-self: center;
-    margin-right:20px;
+    margin-right: 30px;
+}
+
+.imgCarrito{
+    cursor: pointer;
+    color: #747474;
+    font-size: 30px;
+    align-self: center;
 }
     .imgCarrito:hover{
-        transform: scale(1.1);
-        transition: 0.3s ease all;
-        filter: brightness(0.7);
+        transition: 0.5s ease all;
+        color: rgb(255, 123, 0);
+    }
+
+.contadorCarrito{
+    color: #fff;
+    font-size: 15px;
+    border-radius: 2px;
+    background: #747474;
+    font-weight: 500;
+    position: absolute;
+    padding: 3px;
+    top: 14px;
+}
+
+    .imgCarrito:hover ~ .contadorCarrito {
+        transition: 0.5s ease all;
+        background: rgb(255, 123, 0);
     }
