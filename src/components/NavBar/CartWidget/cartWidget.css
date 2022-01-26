@@ -1,0 +1,12 @@
+.imgCarrito{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    align-self: center;
+    margin-right:20px;
+}
+    .imgCarrito:hover{
+        transform: scale(1.1);
+        transition: 0.3s ease all;
+        filter: brightness(0.7);
+    }
