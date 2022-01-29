@@ -6,10 +6,9 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <ItemListContainer greeting="Catalogo de Productos" />
+      <ItemListContainer />
     </div>
   );
 }
 
 export default App;
-
