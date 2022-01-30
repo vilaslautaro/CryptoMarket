@@ -1,22 +1,21 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import './itemCount.css';
 
-function ItemCount({ imgSrc, inicial, stock, nombreProducto, precioProducto, onAdd, message }) {
+function ItemCount({ imgSrc, inicial, stock, nombreProducto, precioProducto, addCart, message }) {
 
     const [cantidadProducto, setCantidadProducto] = useState(inicial);
 
-    function sumarCantidadProducto() {
+    function onAdd() {
         if (cantidadProducto >= 0 && cantidadProducto < stock) {
         setCantidadProducto(cantidadProducto + 1);
         }
     }
 
-    function restarCantidadProducto() {
+    function onDecrease() {
         if (cantidadProducto > 0) {
             setCantidadProducto(cantidadProducto - 1);
         }
     }
-
 
     return (
         <div className="contenedor__Producto">
@@ -30,11 +29,11 @@ function ItemCount({ imgSrc, inicial, stock, nombreProducto, precioProducto, onA
                     <p className="precio__Producto">{precioProducto}</p>
                 </div>
                 <div className="producto__BoxCantidad">
-                    <button className="btn__Operacion" onClick={restarCantidadProducto}>-</button>
+                    <button className="btn__Operacion" onClick={onDecrease}>-</button>
                     <p className='texto__Operacion'>{cantidadProducto}</p>
-                    <button className="btn__Operacion" onClick={sumarCantidadProducto}>+</button>
+                    <button className="btn__Operacion" onClick={onAdd}>+</button>
                 </div>
-                <button className='btn__AgregarAlCarrito' onClick={() => onAdd(stock, cantidadProducto, nombreProducto)}> Agregar al carrito</button>
+                <button className='btn__AgregarAlCarrito' onClick={() => addCart(stock, cantidadProducto, nombreProducto)}> Agregar al carrito</button>
                 {message && <p className='mensaje__Estado'>{message}</p>}
                 
             </div>

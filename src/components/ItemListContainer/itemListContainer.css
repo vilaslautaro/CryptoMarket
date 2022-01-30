@@ -1,5 +1,11 @@
-.box__Items{
+.title__Section{
+    background: rgb(230, 230, 230);
+    margin: 0;
     padding: 30px;
+}
+
+.box__Items{
+    padding-bottom: 30px;
     background: rgb(230, 230, 230);
     display: grid;
     justify-content: center;

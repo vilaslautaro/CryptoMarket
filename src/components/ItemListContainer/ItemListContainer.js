@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ItemCount from './ItemCount';
 import './itemListContainer.css';
 
-function ItemListContainer() {
-
+function ItemListContainer() {    
     const [messageAddItem, setMessageAddItem] = useState('');
 
-    function agregarItemAlCarrito(stock, cantidadProducto, nombreProducto) {
+    function addCart(stock, cantidadProducto, nombreProducto) {
         if (stock > 0) {
             if (cantidadProducto >= 1) {
                 return setMessageAddItem(`Se agregaron al carrito ${cantidadProducto} Unidades del ${nombreProducto}.`);
@@ -20,15 +19,14 @@ function ItemListContainer() {
         }
     }
 
-
     return (
         <div>
+            <h2 class="title__Section">Productos</h2>
             <div className="box__Items">
-                <ItemCount imgSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_oOeAHj-VRdD_olCk-hxwP10Wvp7uh8ZBfl5V9P6muhWh2vW7Up9ffDnnZQcLy63fVQE&usqp=CAU" inicial={1} stock={6} nombreProducto="SAMSUNG S21 128GB" precioProducto={1000} onAdd={agregarItemAlCarrito} message={messageAddItem} />
+                <ItemCount imgSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_oOeAHj-VRdD_olCk-hxwP10Wvp7uh8ZBfl5V9P6muhWh2vW7Up9ffDnnZQcLy63fVQE&usqp=CAU" inicial={1} stock={6} nombreProducto="SAMSUNG S21 128GB" precioProducto={1000} addCart={addCart} message={messageAddItem} />
             </div>
         </div>
     );
 }
 
 export default ItemListContainer;
-
