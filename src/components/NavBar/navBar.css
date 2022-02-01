@@ -53,6 +53,7 @@
                     .menu__Categorias{
                         color: rgb(116, 116, 116);
                         font-size: 20px;
+                        border-bottom: 1px solid transparent;
                     }
                         .menu__Categorias:hover{
                             transition: 0.5s all ease;

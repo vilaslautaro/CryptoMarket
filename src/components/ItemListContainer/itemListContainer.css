@@ -1,13 +1,16 @@
 .title__Section{
     background: rgb(230, 230, 230);
     margin: 0;
+    font-size: 40px;
+    font-weight: 600;
     padding: 30px;
 }
 
-.box__Items{
+.container__Store{
     padding-bottom: 30px;
     background: rgb(230, 230, 230);
-    display: grid;
-    justify-content: center;
-    grid-template-columns: auto auto auto;
+}
+
+.loading{
+    font-size: 30px;
 }

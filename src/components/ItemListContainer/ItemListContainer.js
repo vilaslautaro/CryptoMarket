@@ -1,29 +1,27 @@
-import { useState } from 'react';
-import ItemCount from './ItemCount';
+import { useState, useEffect } from 'react';
 import './itemListContainer.css';
+import { getItem } from '../../api/api';
+import ItemList from './ItemList/ItemList';
 
-function ItemListContainer() {    
-    const [messageAddItem, setMessageAddItem] = useState('');
+function ItemListContainer() {
 
-    function addCart(stock, cantidadProducto, nombreProducto) {
-        if (stock > 0) {
-            if (cantidadProducto >= 1) {
-                return setMessageAddItem(`Se agregaron al carrito ${cantidadProducto} Unidades del ${nombreProducto}.`);
-            } else if (cantidadProducto === 1) {
-                return setMessageAddItem(`Se agregó al carrito${cantidadProducto} Unidad del ${nombreProducto}.`);
-            } else if (cantidadProducto === 0) {
-                return setMessageAddItem('La cantidad minima de unidades para agregar al carrito es 1.');
-            }
-        } else {
-            return setMessageAddItem('Lo sentimos, no hay stock disponible de este producto.');
-        }
-    }
+    // creamos la variable productos vacia
+    const [products, setProducts] = useState([]);
+
+    // traemos los productos 1 sola vez
+    useEffect(() => {
+        getItem().then(function (products) {
+            // guardamos en la variable products los productos que traemos desde el api.js
+            setProducts(products)
+        });
+    }, []);
 
     return (
         <div>
-            <h2 class="title__Section">Productos</h2>
-            <div className="box__Items">
-                <ItemCount imgSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_oOeAHj-VRdD_olCk-hxwP10Wvp7uh8ZBfl5V9P6muhWh2vW7Up9ffDnnZQcLy63fVQE&usqp=CAU" inicial={1} stock={6} nombreProducto="SAMSUNG S21 128GB" precioProducto={1000} addCart={addCart} message={messageAddItem} />
+            <h2 className="title__Section">Tienda</h2>
+            <div className="container__Store">
+                {/* le decimos que si la api trae 1 o más productos, nos los muestre, de lo contrario que muestre un "cargando" */}
+                { products.length > 0 ? <ItemList products={products} /> : <p className='loading'>Cargando...</p> }
             </div>
         </div>
     );
