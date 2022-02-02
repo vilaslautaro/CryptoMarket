@@ -8,8 +8,8 @@ function ItemDetailContainer() {
 
     useEffect(() => {
         getItem().then(function (product) {
-            product = product.find((p) => p.id === 1);
-            setProduct(product);
+            const productoEncontrado = product.find((p) => p.id === 1);
+            setProduct(productoEncontrado);
         })
     }, []);
 
