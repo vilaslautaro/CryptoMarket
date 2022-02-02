@@ -1,4 +1,4 @@
-const products = [
+const productos = [
     {
         id: 1,
         title: 'samsung s21 ultra',
@@ -32,12 +32,14 @@ const products = [
     }
 ];
 
-const promesa = new Promise(function(resolve, reject){
-    setTimeout(function(){
-        resolve(products);
-    }, 2000)
+// creamos una promesa a la que le decimos que si es exitosa, cargue los productos
+const promesa = new Promise(function(resolve, reject) {
+    setTimeout(() =>{
+        resolve(productos);
+    }, 500);
 });
 
+// creamos una funcino que retorne la promesa con los productos ya cargados
 function getItem(){
     return promesa;
 }

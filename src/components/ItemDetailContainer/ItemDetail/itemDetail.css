@@ -1,0 +1,96 @@
+.container__Boxs{
+    display: flex;
+    display: row wrap;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 1px 1px 3px #000;
+}
+
+.img__Product{
+    max-width: 500px;
+    max-height: 500px;
+    margin: 0;
+    border-radius: 15px;
+    background: #fff;
+}
+
+.box__Product{
+        background: #FFF;
+        border-radius: 15px;
+        width: 100%;
+        flex-flow: column wrap;
+        padding: 0 15px;
+        margin: 45px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+.box__Description{
+    display: flex;
+    
+    flex-flow: column wrap;
+    align-items: flex-start;
+}
+
+.name__Product{
+    font-size: 30px;
+    text-transform: uppercase;
+    margin: 0px 0;
+    padding-bottom: 30px;
+    font-weight: 500;
+    align-self: flex-start;
+    color: #000;
+}
+.descripcion__Product{
+    font-size: 22px;
+    margin: 0px 0;
+    padding-bottom: 50px;
+    text-transform:uppercase;
+    font-weight: 400;
+    color: #000;
+}
+
+.box__Precio{
+    margin: 0px 0;
+    display: flex;
+    padding-bottom: 10px;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.img__Dai{
+    width: 40px;
+    height: 40px;
+    padding-top: 4px;
+    margin: 0;
+}
+
+.precio__Product{
+    margin: 0;
+    padding-left: 10px;
+    font-size: 40px;
+    color: #000;
+    font-weight: 400;
+}
+
+.btn__Product{
+    background: transparent;
+    color: rgb(255, 123, 0);
+    border: 1px solid rgb(255, 123, 0);
+    border-radius: 5px;
+    outline: none;
+    margin: 15px 0 10px;
+    padding: 8px 1px 9px;
+    font-weight: 500;
+    width: 100%;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn__Product:hover{
+    color: #fff;
+    background: rgb(255, 123, 0);
+    transition: 0.5s ease all;
+}

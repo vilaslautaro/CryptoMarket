@@ -1,0 +1,19 @@
+.title__SectionProduct{
+    background: rgb(230, 230, 230);
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 600;
+    padding: 30px;
+}
+
+.container__Product{
+    padding-bottom: 30px;
+    display: grid;
+    justify-content: center;
+    background: rgb(230,230,230);
+}
+
+.loading{
+    font-size: 30px;
+}
