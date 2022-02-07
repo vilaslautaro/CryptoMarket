@@ -4,7 +4,7 @@
     flex-flow: column nowrap;
     max-width: 200px;
     border-radius: 15px;
-    margin: 0 30px;
+    margin: 0 30px 60px;
     cursor: pointer;
     box-shadow: 1px 1px 10px #000;
 }
@@ -13,6 +13,10 @@
     transform: scale(1.02);
     transition: 0.7s ease all;
     box-shadow: 1px 1px 10px rgb(255, 123, 0);
+}
+
+.enlace__Producto{
+    text-decoration: none;
 }
 
 .img__Producto{

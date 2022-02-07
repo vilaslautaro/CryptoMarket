@@ -1,0 +1,33 @@
+.contenedor__error{
+    margin-top: 50px;
+}
+
+.contenedor__error-titulo{
+    color: rgb(255, 123, 0);
+    font-size: 50px;
+}
+
+.contenedor__error-subtitulo{
+    color: #000;
+    font-size: 25px;
+}
+
+.contenedor__error-boton{
+    background: rgb(255, 123, 0);
+    color: #fff;
+    box-shadow: 1px 1px 7px rgb(255, 123, 0);
+    border: 2px solid rgb(255, 123, 0);
+    border-radius: 15px;
+    outline: none;
+    margin: 15px 0 10px;
+    padding: 10px 15px;
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.contenedor__error-boton:hover{
+    color: rgb(255, 123, 0);
+    background: #fff;
+    transition: 0.5s ease all;
+}

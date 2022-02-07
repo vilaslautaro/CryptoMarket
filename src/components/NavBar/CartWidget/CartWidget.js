@@ -1,7 +1,7 @@
 import React from 'react';
 import './cartWidget.css';
-// import carrito from '../../../assets/images/carrito.png';
 
+// funcion que crea el CARRITO
 function CartWidget() {
     return (
         <div className="cajaCarrito">

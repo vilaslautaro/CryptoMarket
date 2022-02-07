@@ -2,21 +2,38 @@ import { useState, useEffect } from 'react';
 import './itemListContainer.css';
 import { getItem } from '../../api/api';
 import ItemList from './ItemList/ItemList';
+import {useParams} from 'react-router-dom';
 
+// funcion encargada de encapsular y traer los valores de los productos desde la API, y se las envia al componente ITEMLIST
+// a su vez tambien se encarga de mostrar TODOS los productos, o segun cada caso (si estamos seleccionando por categoria o no)
+// 
 function ItemListContainer() {
 
-    // creamos la variable productos vacia
+    // creamos el estado productos
     const [productos, setProducts] = useState([]);
-
-    // traemos los productos 1 sola vez
+    // traemos las categorias con el hook UseParams
+    const { categoryId } = useParams();
+    // traemos TODOS los productos SINO estamos en una categoria, si estamos en una categoria, traemos los productos de ESA categoria
     useEffect(() => {
+        if(!categoryId){
+            getItem().then(function (productos) {
+                // guardamos en el estado que creamos "productos" los productos que traemos desde el api.js
+                setProducts(productos);
+            }).catch((error)=> {
+                console.log(error);
+            });
+        } else{
         getItem().then(function (productos) {
-            // guardamos en el estado que creamos "productos" los productos que traemos desde el api.js
-            setProducts(productos)
+            const productosCategory = productos.filter((producto) =>{
+                return producto.category === categoryId;
+            })
+            // guardamos en el estado que creamos "productos" los productos que traemos desde el api.js filtrados por categoria
+            setProducts(productosCategory);
         }).catch((error)=> {
             console.log(error);
         });
-    }, []);
+        }
+    }, [categoryId]);
 
     return (
         <div>
