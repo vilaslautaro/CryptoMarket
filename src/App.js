@@ -12,13 +12,13 @@ function App() {
         <main>
           <Routes>
             {/* traemos el componente que muestra la tienda (todos los productos) */}
-            <Route path="/" element={<ItemListContainer />} />
+            <Route path="/" element={ <ItemListContainer />} />
             {/* traemos el componente que muestra la tienda segun categoria*/}
             <Route path="/category/:categoryId" element={ <ItemListContainer />} />
             {/* traemos el componente que al hacer click en producto nos lleva al producto seleccionado (a través de su ID) */}
             <Route path="/producto/:productId" element={ <ItemDetailContainer />} />
             {/* pagina de error */}
-            <Route path="*" element={< Error404 />} />
+            <Route path="*" element={ <Error404 />} />
           </Routes>
         </main>
       </div>

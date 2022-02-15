@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './itemCount.css';
 
 function ItemCount({ inicial, stock }) {
@@ -6,6 +6,14 @@ function ItemCount({ inicial, stock }) {
     const [cantidadProducto, setCantidadProducto] = useState(inicial);
     // estado que guarda el mensaje
     const [messageAddItem, setMessageAddItem] = useState('');
+
+    useEffect(() =>{
+        console.log('se ejecuta cuando cambia el cantidad producto');
+
+        return () => {
+            console.log('se ejecuta el cleanUp');
+        }
+    },[cantidadProducto]);
 
     // funcion que suma en cantidadProducto
     function onAdd() {
