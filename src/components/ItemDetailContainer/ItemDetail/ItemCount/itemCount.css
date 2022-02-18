@@ -1,6 +1,7 @@
 .contenedor__Contador{
     background: #FFF;
     border-radius: 15px;
+    width: 100%;
 }
 
 .producto__BoxCantidad{
@@ -48,7 +49,13 @@
     position:relative;
 }
 
-.mensaje__Estado{
+.btn__AgregarAlCarrito:hover{
+    background: rgb(255, 123, 0); 
+    color: #fff;
+    transition: 0.5s ease;
+}
+
+/* .mensaje__Estado{
     margin-top: 20px;
     padding: 7px;
     font-size: 13px;
@@ -61,5 +68,5 @@
     box-shadow: 1px 1px 10px rgb(255, 123, 0);
     right: 0;
     top: 35px;
-}
+} */
 
