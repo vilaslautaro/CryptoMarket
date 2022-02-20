@@ -1,5 +1,140 @@
+.contenedor{
+    margin: 30px auto 0;
+    max-width: 1400px;
+    display: grid;
+    justify-content: center;
+}
 
-.contenedor__carrito-vacio{
+.contenedor__Productos{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+.cajaProducto{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 123, 0, 0.596);
+    height: 100%;
+    margin: 5px 0;
+}
+
+.cajaProducto__imagen{
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+.cajaProducto__subcaja{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+}
+
+.cajaProducto__titulo{
+    text-transform: uppercase;
+    font-size: 25px;
+    color: #000;
+    text-align: start;
+    margin-bottom:10px;
+}
+.cajaProducto__descripcion{
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #000;
+    margin-bottom:100px;
+}
+
+.cajaProducto__eliminar{
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: rgb(255, 123, 0);
+}
+
+.cajaProducto__eliminar:hover{
+    text-decoration: underline;
+    transition: 0.5s ease;
+}
+
+.cajaProducto__cantidad{
+    text-transform: capitalize;
+    font-size: 25px;
+    color: #000;
+}
+
+.cajaProducto__subtotal{
+    text-transform: capitalize;
+    font-size: 30px;
+    color: #000;
+    font-weight: 600;
+    margin-bottom:80px;
+}
+
+.contenedor__subcaja{
+    display: flex;
+    flex-flow: column wrap;
+    margin-bottom: 50px;
+}
+.contenedor__precioTotal{
+    font-size: 30px;
+    text-align: end;
+    font-weight: 600;
+    margin:50px 0 0;
+    padding-bottom: 50px;
+    padding-right: 15px;
+    color: #000;
+    border-bottom: 1px solid rgba(255, 123, 0, 0.596);
+}
+
+.contenedor__botones{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 123, 0, 0.596);
+}
+
+.contenedor__btn{
+    background: transparent;
+    color: rgb(255, 123, 0);
+    border: 1px solid rgb(255, 123, 0);
+    border-radius: 10px;
+    outline: none;
+    margin: 15px 0 10px;
+    padding: 7px 10px 10px;
+    text-decoration: none;
+    font-weight: 500;
+    width: 100%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.contenedor__btn:hover{
+    background: rgb(255, 123, 0); 
+    color: #fff;
+    transition: 0.5s ease;
+}
+
+.btnVaciar{
+    margin-left: 120px;
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+.btnVaciar:hover{
+    transition: 0.5s ease;
+    background: rgb(173, 84, 0);
+}
+
+.btnComprar{
+    margin-right: 30px;
+}
+
+.contenedorVacio__carrito-vacio{
     background: transparent;
     color: rgb(255, 123, 0);
     box-shadow: 1px 1px 4px rgb(255, 123, 0);
@@ -13,7 +148,7 @@
     cursor: pointer;
 }
 
-.contenedor__carrito-vacio:hover{
+.contenedorVacio__carrito-vacio:hover{
     color: #fff;
     background: rgb(255, 123, 0);
     transition: 0.5s ease;

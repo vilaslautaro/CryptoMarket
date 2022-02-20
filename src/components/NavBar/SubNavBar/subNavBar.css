@@ -1,0 +1,55 @@
+.header__SubNav{
+    display: flex;
+    background: rgb(116, 116, 116);
+    flex-flow: row wrap;
+    width: 100%;
+    height: 70px;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+    .subNav__form{
+        width: 60%;
+        max-width: 1400px;
+        display: flex;
+        justify-content: center;
+    }
+
+        .form__Search{
+         height:100%;
+         padding: 5px 10px;
+         border-radius: 10px;
+         border: 1px solid rgb(90, 90, 90);
+         width: 100%;
+         margin-right: 30px;
+         font-size: 20px;
+        }
+
+            .form__Search:hover, .form__Search:focus{
+                border: 1px solid rgb(255, 123, 0);
+                outline: 1px solid rgb(255, 123, 0);
+                transition: 0.3s all ease;
+                cursor:text;
+                color: #000;
+            }
+
+        .form__btnSubmit{
+            color: #fff;
+            font-size: 20px;
+            background: rgb(255, 123, 0);
+            border: 1px solid rgb(90, 90, 90);
+            box-shadow: 1px 1px 5px rgb(51, 51, 51);
+            border-radius: 10px;
+            font-weight: 500;
+            padding: 5px 30px;
+        }
+
+             .form__btnSubmit:hover{
+                cursor: pointer;
+                box-shadow: 1px 1px 5px rgb(32, 32, 32);
+                transition: 0.3s ease all;
+                background: rgb(199, 96, 0);
+            }
+
+            

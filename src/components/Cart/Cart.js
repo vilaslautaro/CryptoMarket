@@ -11,28 +11,44 @@ function Cart() {
         <>
             {
                 cart.length === 0 ?
-                    <>
-                        <h1>Tu carrito esta vacio</h1>
+                    <div className='contenedorVacio'>
+                        <h1 className='contenedorVacio__titulo'>Tu carrito esta vacio</h1>
                         <Link to="/">
-                            <button onClick={clear} className="contenedor__carrito-vacio">Volver a inicio</button>
+                            <button onClick={clear} className="contenedorVacio__carrito-vacio">Volver a inicio</button>
                         </Link>
-                    </>
+                    </div>
                     :
                     (
-                        <>
-                            {cart.map((product) => (
-                                <div key={product.id}>
-                                    <h3>{product.title}</h3>
-                                    <span>{product.cantidad}</span>
-                                    <p>{product.price}</p>
-                                    <i onClick={() => quitarProducto(product.id)} className="fas fa-backspace"></i>
-                                    <p>Subtotal ${subTotal(product)}</p>
+                        <div className="contenedor">
+                            <div className="contenedor__Productos">
+                                {cart.map((product) => (
+                                    <div className="cajaProducto" key={product.id}>
+                                        <img className='cajaProducto__imagen' src={product.picture} alt='Imagen Producto' />
+                                        <div className='cajaProducto__subcaja'>
+                                            <h3 className="cajaProducto__titulo">{product.title}</h3>
+                                            <p className='cajaProducto__descripcion'>{product.description}</p>
+                                            <button className="cajaProducto__eliminar" onClick={() => quitarProducto(product.id)}>Eliminar</button>
+                                        </div>
+                                        <div className='cajaProducto__subcaja'>
+                                            <span className="cajaProducto__cantidad">Cantidad: {product.cantidad}</span>
+                                            <p className="cajaProducto__subtotal">${subTotal(product)}</p>
+                                        </div>
+                                    </div>
+                                ))
+                                }
+                            </div>
+                            <div className="contenedor__subcaja">
+                                <p className="contenedor__precioTotal">Total ${sumaTotal()}</p>
+                                <div className='contenedor__botones'>
+                                    <div>
+                                        <button className="contenedor__btn btnVaciar" onClick={clear}>Vaciar carrito</button>
+                                    </div>
+                                    <Link to="/">
+                                        <button className='contenedor__btn btnComprar'>Finalizar compra</button>
+                                    </Link>
                                 </div>
-                            ))
-                            }
-                            <p >Precio total ${sumaTotal()}</p>
-                            <button onClick={clear}>Vaciar carrito</button>
-                        </>
+                            </div>
+                        </div>
                     )
             }
         </>
