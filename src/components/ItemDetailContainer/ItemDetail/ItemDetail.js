@@ -1,17 +1,25 @@
 import './itemDetail.css';
 import ItemCount from './ItemCount/ItemCount'
-import { useState } from 'react'
-import {Link} from 'react-router-dom'
+import { useState, useContext } from 'react'
+import { Link } from 'react-router-dom'
+import { CartContext } from '../../../context/CartContext';
+import { MessageContext } from '../../../context/MessageContext';
 
 // funcion que crea la caja visual del item individiualmente cuando es seleccionado
 function ItemDetail({ producto }) {
     // estado que guarda la cantidad de x producto que desea enviar el usuario al carrito
     const [quantityProductSendToCart, setQuantityProductSendToCart] = useState();
 
+    const { añadirProductoAlCarrito } = useContext(CartContext)
+
+    const { enviarMensaje } = useContext(MessageContext)
+
     // funcion que trae el valor que el usuario desea enviar al carrito y lo guarda en el estado
-    function addCart(newItemCount) {
-        console.log('La cantidad de productos enviados al carrito es de ' + newItemCount)
-       setQuantityProductSendToCart(newItemCount)
+    function addCart(cantidad) {
+        // guardo
+        setQuantityProductSendToCart(cantidad)
+        añadirProductoAlCarrito(cantidad, producto)
+        enviarMensaje('Tu producto fue cargado al carrito de manera exitosa', 'mostrar')
     }
 
 
@@ -27,11 +35,11 @@ function ItemDetail({ producto }) {
                         <p className="precio__Product">{producto.price}</p>
                     </div>
                 </div>
-                {   
+                {
                     // si el estado quantity es undefined (por default lo es) traemos el ItemCount, si esta definido, traemos un link que nos lleva al carrito
                     !quantityProductSendToCart ?
-                    <ItemCount stock={5} initial={1} addCart={addCart} /> :
-                    <Link className="linkCart__Product" to="/cart">Finalizar compra</Link>
+                        <ItemCount stock={producto.stock} initial={1} addCart={addCart} /> :
+                        <Link className="linkCart__Product" to="/cart">Finalizar compra</Link>
                 }
             </div>
         </div>
