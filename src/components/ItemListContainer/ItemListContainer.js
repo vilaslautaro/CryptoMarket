@@ -3,6 +3,8 @@ import './itemListContainer.css';
 import { getItem } from '../../api/api';
 import ItemList from './ItemList/ItemList';
 import {useParams} from 'react-router-dom';
+// import { collection, getDocs } from 'firebase/firestore';
+// import {db} from '../firebase'
 
 // funcion encargada de encapsular y traer los valores de los productos desde la API, y se las envia al componente ITEMLIST
 // a su vez tambien se encarga de mostrar TODOS los productos, o segun cada caso (si estamos seleccionando por categoria o no)
@@ -15,6 +17,7 @@ function ItemListContainer() {
     const { categoryId } = useParams();
     // traemos TODOS los productos SINO estamos en una categoria, si estamos en una categoria, traemos los productos de ESA categoria
     useEffect(() => {
+        // si categoryId no es utilizado
         if(!categoryId){
             getItem().then(function (productos) {
                 // guardamos en el estado que creamos "productos" los productos que traemos desde el api.js
@@ -34,6 +37,7 @@ function ItemListContainer() {
         });
         }
     }, [categoryId]);
+
 
     return (
         <div>

@@ -11,7 +11,6 @@ function ItemDetailContainer() {
     // guardamos el id de los productos en un estado
     const {productId} = useParams();
 
-    // al ejecutar la app x1era vez y cuando hagamos un cambio de ID de algun producto, traemos los productos, y guardamos el ID de los productos en el estado product, para que al hacer click en el producto nos abra el que hemos seleccionado (reconociendolo por medio de su ID)
     useEffect(() => {
         getItem().then(function (product) {
             const productoEncontrado = product.find((p) => p.id.toString() === productId);
