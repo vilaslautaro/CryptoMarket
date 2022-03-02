@@ -1,25 +1,68 @@
 import './cart.css'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { CartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom'
 
 
 function Cart() {
-    const { cart, clear, quitarProducto, sumaTotal, subTotal } = useContext(CartContext)
+    const { cart, clear, quitarProducto, sumaTotal, subTotal, enviarCompra, cargarDatosUsuario, messageID, idCompra, resetUserAndId } = useContext(CartContext)
+
+    // estados del formulario
+    const [nombre, setNombre] = useState('')
+    const [telefono, setTelefono] = useState('')
+    const [email, setEmail] = useState('')
+
+
+    // seteo de los estados del formulario cuando el usuario completa los datos
+    const handleNombreChange = event => setNombre(event.target.value)
+    const handleTelefonoChange = event => setTelefono(event.target.value)
+    const handleEmailChange = event => setEmail(event.target.value)
+
+    // funcion que envia los datos del producto y del formulario al cartContext
+    function compraFinalizada(event) {
+        event.preventDefault()
+        if ((nombre && telefono && email) !== "") {
+            cargarDatosUsuario(nombre, telefono, email)
+            enviarCompra()
+        } else {
+            console.log('formulario no completado')
+        }
+    }
+
 
     return (
         <>
             {
                 cart.length === 0 ?
-                    <div className='contenedorVacio'>
-                        <h1 className='contenedorVacio__titulo'>Tu carrito esta vacio</h1>
+                <div className='contenedorVacio'>
+                        <h1 className='contenedorVacio__titulo'>{idCompra === '' ? 'Tu carrito esta vacio' : messageID(idCompra)}</h1>
                         <Link to="/">
-                            <button onClick={clear} className="contenedorVacio__carrito-vacio">Volver a inicio</button>
+                            <button onClick={resetUserAndId} className="contenedorVacio__carrito-vacio">Volver a inicio</button>
                         </Link>
                     </div>
                     :
                     (
                         <div className="contenedor">
+                            <form className='formUser'>
+                                <div className='formUser__title'>Completa el formulario para continuar con la compra</div>
+                                <div className='formUser__subBox'>
+                                    <div className='formUser__cajaInput'>
+                                        <p className='formUser__subtitle'>Nombre completo</p>
+                                        <input name='nombre' value={nombre} placeholder='Juan Suarez' className='formUser__input' onChange={handleNombreChange} type='text' />
+                                    </div>
+                                    <div className='formUser__cajaInput'>
+                                        <p className='formUser__subtitle'>Celular</p>
+                                        <input name="telefono" value={telefono} placeholder='+54 11 500 798' className='formUser__input' onChange={handleTelefonoChange} type='tel' />
+                                    </div>
+                                    <div className='formUser__cajaInput'>
+                                        <p className='formUser__subtitle'>Email</p>
+                                        <input name='email' value={email} placeholder='usuario@gmail.com' className='formUser__input' onChange={handleEmailChange} type='email' />
+                                    </div>
+                                </div>
+                                <div className='contenedor__botones'>
+                                    <button className='contenedor__btn btnComprar' type='submit' onClick={compraFinalizada}>Finalizar compra</button>
+                                </div>
+                            </form>
                             <div className="contenedor__Productos">
                                 {cart.map((product) => (
                                     <div className="cajaProducto" key={product.id}>
@@ -36,16 +79,9 @@ function Cart() {
                                     </div>
                                 ))
                                 }
-                            </div>
-                            <div className="contenedor__subcaja">
-                                <p className="contenedor__precioTotal">Total ${sumaTotal()}</p>
-                                <div className='contenedor__botones'>
-                                    <div>
-                                        <button className="contenedor__btn btnVaciar" onClick={clear}>Vaciar carrito</button>
-                                    </div>
-                                    <Link to="/">
-                                        <button className='contenedor__btn btnComprar'>Finalizar compra</button>
-                                    </Link>
+                                <div className='contenedor__precio'>
+                                    <button className="contenedor__btn btnVaciar" onClick={clear}>Vaciar carrito</button>
+                                    <p className="contenedor__precioTotal">Total ${sumaTotal()}</p>
                                 </div>
                             </div>
                         </div>

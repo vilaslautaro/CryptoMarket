@@ -10,7 +10,7 @@ function CartWidget() {
     return (
         <Link className="enlace__Carrito" to={'/cart'} >
                 <i className="imgCarrito fas fa-shopping-cart"></i>
-                <span className='contadorCarrito'>{cart.length}</span>
+                <span className={cart.length === 0 ? 'contadorVacio' : 'contadorCarrito'}>{cart.length}</span>
         </Link>
     );
 }

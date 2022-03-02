@@ -14,6 +14,10 @@
         color: rgb(255, 123, 0);
     }
 
+.contadorVacio{
+    display: none;
+}
+
 .contadorCarrito{
     color: #fff;
     font-size: 15px;

@@ -19,7 +19,8 @@ function ItemDetail({ producto }) {
         // guardo
         setQuantityProductSendToCart(cantidad)
         añadirProductoAlCarrito(cantidad, producto)
-        enviarMensaje('Tu producto fue cargado al carrito de manera exitosa', 'mostrar')
+        // creo mensaje que avisa al usuario que el producto fue cargado de manera exitosa
+        enviarMensaje('Tu producto fue cargado al carrito de manera exitosa', 'mostrar', 2000)
     }
 
 

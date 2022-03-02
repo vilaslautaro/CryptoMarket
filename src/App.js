@@ -8,6 +8,7 @@ import CartContextProvider from './context/CartContext'
 import Cart from './components/Cart/Cart';
 import {MessageContextProvider} from './context/MessageContext'
 import Message from './components/ItemDetailContainer/ItemDetail/Message/Message'
+import AddItemContainer from './components/AddItemContainer/AddItemContainer'
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
               <Route path="/cart" element={<Cart />} />
               {/* pagina de error */}
               <Route path="*" element={<Error404 />} />
+              {/* componente con formulario para agregar productos */}
+              <Route path="/product/add" element={ <AddItemContainer/> } />
             </Routes>
           </main>
         </div>
