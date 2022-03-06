@@ -1,11 +1,12 @@
 import './cart.css'
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { CartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom'
 
 
 function Cart() {
-    const { cart, clear, quitarProducto, sumaTotal, subTotal, enviarCompra, cargarDatosUsuario, messageID, idCompra, resetUserAndId } = useContext(CartContext)
+    const { cart, clear, quitarProducto, sumaTotal, subTotal, enviarCompra, idCompra, setIdCompra } = useContext(CartContext)
+    const [user, setUser] = useState({})
 
     // estados del formulario
     const [nombre, setNombre] = useState('')
@@ -18,23 +19,41 @@ function Cart() {
     const handleTelefonoChange = event => setTelefono(event.target.value)
     const handleEmailChange = event => setEmail(event.target.value)
 
+
+    useEffect(() => {
+        setUser({ nombre, telefono, email })
+    }, [nombre, telefono, email])
+
     // funcion que envia los datos del producto y del formulario al cartContext
     function compraFinalizada(event) {
         event.preventDefault()
         if ((nombre && telefono && email) !== "") {
-            cargarDatosUsuario(nombre, telefono, email)
-            enviarCompra()
+            enviarCompra(user)
         } else {
             console.log('formulario no completado')
         }
     }
 
+    function messageID(id) {
+        return (
+            <>
+                <p className='text__success'>Tu compra ha sido exitosa. Gracias por confiar en nosotros!</p>
+                <p className='text__success'>El ID de tu compra es: {id}</p>
+            </>
+        )
+    }
+
+    // function que resetea el ID y el usuario
+    function resetUserAndId() {
+        setIdCompra('')
+        setUser('')
+    }
 
     return (
         <>
             {
                 cart.length === 0 ?
-                <div className='contenedorVacio'>
+                    <div className='contenedorVacio'>
                         <h1 className='contenedorVacio__titulo'>{idCompra === '' ? 'Tu carrito esta vacio' : messageID(idCompra)}</h1>
                         <Link to="/">
                             <button onClick={resetUserAndId} className="contenedorVacio__carrito-vacio">Volver a inicio</button>
