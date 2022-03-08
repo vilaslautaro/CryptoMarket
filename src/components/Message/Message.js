@@ -1,8 +1,8 @@
 import {useContext} from 'react'
-import {MessageContext} from '../../../../context/MessageContext'
+import {MessageContext} from '../../context/MessageContext'
 import './message.css'
 
-function Message (){
+function Message(){
     const {message, state} = useContext(MessageContext)
     return(
         

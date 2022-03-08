@@ -6,35 +6,33 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Error404 from './components/404/404.js';
 import CartContextProvider from './context/CartContext'
 import Cart from './components/Cart/Cart';
-import {MessageContextProvider} from './context/MessageContext'
-import Message from './components/ItemDetailContainer/ItemDetail/Message/Message'
+import { MessageContextProvider } from './context/MessageContext'
+import Message from './components/Message/Message'
 import AddItemContainer from './components/AddItemContainer/AddItemContainer'
+import { SubNavContextProvider } from './context/SubNavContext';
+
 
 function App() {
   return (
     <MessageContextProvider>
-      <CartContextProvider>
-        <div className="App">
-          <NavBar />
-          <Message/>
-          <main>
-            <Routes>
-              {/* traemos el componente que muestra la tienda (todos los productos) */}
-              <Route path="/" element={<ItemListContainer />} />
-              {/* traemos el componente que muestra la tienda segun categoria*/}
-              <Route path="/category/:categoryId" element={<ItemListContainer />} />
-              {/* traemos el componente que al hacer click en producto nos lleva al producto seleccionado (a través de su ID) */}
-              <Route path="/producto/:productId" element={<ItemDetailContainer />} />
-              {/* comoponente de Cart, si hacemos click en el carrito */}
-              <Route path="/cart" element={<Cart />} />
-              {/* pagina de error */}
-              <Route path="*" element={<Error404 />} />
-              {/* componente con formulario para agregar productos */}
-              <Route path="/product/add" element={ <AddItemContainer/> } />
-            </Routes>
-          </main>
-        </div>
-      </CartContextProvider>
+      <SubNavContextProvider>
+        <CartContextProvider>
+          <div className="App">
+            <NavBar />
+            <Message />
+            <main>
+              <Routes>
+                <Route path="/" element={<ItemListContainer />} />
+                <Route path="/category/:categoryId" element={<ItemListContainer />} />
+                <Route path="/producto/:productId" element={<ItemDetailContainer />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="*" element={<Error404 />} />
+                <Route path="/product/add" element={<AddItemContainer />} />
+              </Routes>
+            </main>
+          </div>
+        </CartContextProvider>
+      </SubNavContextProvider>
     </MessageContextProvider>
   );
 }

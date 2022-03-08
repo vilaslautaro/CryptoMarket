@@ -1,7 +1,6 @@
 import './item.css';
 import {Link} from 'react-router-dom';
 
-// funcion que muestra el producto miniatura en la tienda con un Link para que redirija al item individual segun el ID
 function Item({ item }) {
     return (
         <div className="contenedor__Producto">

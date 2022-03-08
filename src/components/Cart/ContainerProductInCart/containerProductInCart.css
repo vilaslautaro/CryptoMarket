@@ -1,0 +1,108 @@
+.contenedor__Productos{
+    grid-area: productos;
+    margin-bottom: 50px;
+}
+
+.cajaProducto{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    border-bottom: 1px solid rgb(255, 123, 0);
+    /* height: 100%; */
+    margin: 5px 0 0px;
+    padding: 0 0 5px;
+}
+
+.cajaProducto__imagen{
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 15px;
+    margin-bottom: 5px;
+}
+
+.cajaProducto__subcaja{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+}
+
+.cajaProducto__subcaja-dos{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    margin-left: 70px;
+    margin-bottom: 50px;
+}
+
+.cajaProducto__titulo{
+    text-transform: uppercase;
+    font-size: 22px;
+    color: #000;
+    text-align: start;
+    margin-bottom:10px;
+}
+.cajaProducto__descripcion{
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #000;
+    margin-bottom:50px;
+    text-align: start;
+}
+
+.cajaProducto__eliminar{
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    padding-bottom: 30px;
+    background: none;
+    border: none;
+    color: rgb(255, 123, 0);
+}
+
+.cajaProducto__eliminar:hover{
+    text-decoration: underline;
+    transition: 0.5s ease;
+}
+
+.cajaProducto__cantidad{
+    text-transform: capitalize;
+    font-size: 25px;
+    color: #000;
+}
+
+.cajaProducto__subtotal{
+    text-transform: capitalize;
+    font-size: 25px;
+    color: #000;
+    font-weight: 600;
+    margin-bottom:50px;
+}
+
+.contenedor__precio{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    /* border-bottom: 1px solid rgb(255, 123, 0); */
+}
+.contenedor__precioTotal{
+    font-size: 30px;
+    text-align: end;
+    font-weight: 600;
+    margin:20px 15px 0 0px;
+    padding-bottom: 20px;
+    padding-right: 15px;
+    color: #000;
+}
+
+.btnVaciar{
+    margin: 20px 0px 20px 120px;
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+.btnVaciar:hover{
+    transition: 0.5s ease;
+    transform: scale(1.02);
+}
+

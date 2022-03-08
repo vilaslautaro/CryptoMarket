@@ -1,0 +1,105 @@
+/* formulario */
+
+.formUser{
+    grid-area: formulario;
+    margin: 0px auto 50px;
+    display: grid;
+    width: 95%;
+    align-content: center;
+    padding: 20px 20px 10px 0;
+    border: 1px solid rgb(255, 123, 0);
+    border-radius: 15px;
+}
+
+.formUser__title{
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(255, 123, 0);
+    margin: 0 0 20px 20px;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.formUser__subBox{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.formUser__cajaInput{
+    margin: 0 30px 20px;
+}
+
+.formUser__subtitle{
+    font-size:18px;
+    font-weight: 600;
+    display: flex;
+    align-items: flex-start;
+    padding: 0;
+    margin: 5px 0 5px 5px;
+}
+
+.formUser__input{
+    padding: 10px 10px;
+    border-radius: 15px;
+    outline: none;
+    font-size: 15px;
+    line-height: 20px;
+    width: 100%;
+    border: 2px solid rgb(255, 123, 0);
+}
+
+.formUser__input.error{
+    border-color: rgb(255, 0,0)
+}
+
+.formUser__textError{
+    color: rgb(255, 0,0);
+    margin: 5px 0;
+    font-size: 15px;
+    text-align: start;
+    padding-left: 5px;
+    width: 100%;
+    font-weight: 600;
+}
+
+
+/* botones */
+.contenedor__botones{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.contenedor__cajabtn{
+    margin: 0 0 20px;
+    padding: 0;
+}
+
+.contenedor__btn{
+    background: transparent;
+    color: rgb(255, 123, 0);
+    border: 1px solid rgb(255, 123, 0);
+    border-radius: 10px;
+    outline: none;
+    margin: 15px 0 10px;
+    padding: 7px 10px 10px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.contenedor__btn:hover{
+    background: rgb(255, 123, 0); 
+    color: #fff;
+    transition: 0.5s ease;
+}
+
+.btnComprar{
+    margin-right: 20px;
+    padding-right: 10px;
+    font-weight: 600;
+    border: 2px solid rgb(255, 123, 0);
+}

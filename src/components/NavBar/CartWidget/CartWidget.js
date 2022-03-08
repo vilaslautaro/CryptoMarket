@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react'
 import { CartContext } from '../../../context/CartContext';
 
-// funcion que crea el CARRITO
 function CartWidget() {
     const { cart } = useContext(CartContext)
     return (

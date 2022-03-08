@@ -25,12 +25,12 @@ function AddItemContainer() {
 
     const onSubmit = async (event) => {
         event.preventDefault()
-        // validacion de campos completados
+        
         if ([title, category, subcategory, marca, stock, price].some(field => field === "")) {
 
             let pictureURL="http://via.placeholder.com/200?text=Not+image"
             const productCollection = collection(db, 'productos')
-            // codigo para subir imagenes
+
             if(typeof picture !== "undefined"){
                 const storage = getStorage();
                 const pictureName=(+ new Date().toString(15));
@@ -39,8 +39,7 @@ function AddItemContainer() {
                 const uploadTask = await uploadBytes(storageReferencia, picture)
                 pictureURL = await getDownloadURL(uploadTask.ref)
             }
-            // referencia a mi coleccion
-            // creo mi nuevo producto
+
             const miProducto = {
                 title: title,
                 category: category,

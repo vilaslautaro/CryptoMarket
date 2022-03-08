@@ -1,5 +1,4 @@
 .title__Section{
-    background: rgb(230, 230, 230);
     margin: 0;
     font-size: 40px;
     font-weight: 600;
@@ -8,9 +7,14 @@
 
 .container__Store{
     padding-bottom: 30px;
-    background: rgb(230, 230, 230);
 }
 
-.loading{
-    font-size: 30px;
+.container__errorSearch{
+    font-size: 25px;
+    font-weight: 600;
+    color: #000;
+}
+
+.container__errorImg{
+    width: 20%;
 }

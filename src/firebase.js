@@ -12,5 +12,4 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-// exporte la base de datos de firestore q contiene mis productos, para poder usarlos en la app
 export const db = getFirestore(app)

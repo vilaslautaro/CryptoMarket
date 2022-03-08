@@ -5,25 +5,19 @@ import { Link } from 'react-router-dom'
 import { CartContext } from '../../../context/CartContext';
 import { MessageContext } from '../../../context/MessageContext';
 
-// funcion que crea la caja visual del item individiualmente cuando es seleccionado
 function ItemDetail({ producto }) {
-    // estado que guarda la cantidad de x producto que desea enviar el usuario al carrito
-    const [quantityProductSendToCart, setQuantityProductSendToCart] = useState();
+    const [cantidadDeProductosEnviadosAlCarrito, setCantidadDeProductosEnviadosAlCarrito] = useState();
 
     const { añadirProductoAlCarrito } = useContext(CartContext)
 
     const { enviarMensaje } = useContext(MessageContext)
 
-    // funcion que trae el valor que el usuario desea enviar al carrito y lo guarda en el estado
-    function addCart(cantidad) {
-        // guardo
-        setQuantityProductSendToCart(cantidad)
+    function añadirAlCarrito(cantidad) {
+        setCantidadDeProductosEnviadosAlCarrito(cantidad)
         añadirProductoAlCarrito(cantidad, producto)
-        // creo mensaje que avisa al usuario que el producto fue cargado de manera exitosa
         enviarMensaje('Tu producto fue cargado al carrito de manera exitosa', 'mostrar', 2000)
     }
-
-
+    
     return (
         <div className='container__Box'>
             <img className="img__Product" src={producto.picture} alt='imagen producto' />
@@ -37,10 +31,9 @@ function ItemDetail({ producto }) {
                     </div>
                 </div>
                 {
-                    // si el estado quantity es undefined (por default lo es) traemos el ItemCount, si esta definido, traemos un link que nos lleva al carrito
-                    !quantityProductSendToCart ?
-                        <ItemCount stock={producto.stock} initial={1} addCart={addCart} /> :
-                        <Link className="linkCart__Product" to="/cart">Finalizar compra</Link>
+                    !cantidadDeProductosEnviadosAlCarrito ?
+                        <ItemCount stock={producto.stock} initial={1} addCart={añadirAlCarrito} /> :
+                        <Link className="linkCart__Product" to="/cart">Ir al carrito</Link>
                 }
             </div>
         </div>
