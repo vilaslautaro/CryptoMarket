@@ -1,5 +1,10 @@
+body.dark .contenedor__error-subtitulo{
+    color: #fff;
+    transition: 0.5s ease;
+}
+
 .contenedor__error{
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .contenedor__error-titulo{
@@ -9,6 +14,7 @@
 
 .contenedor__error-subtitulo{
     color: #000;
+    transition: 0.5s ease;
     font-size: 25px;
 }
 
@@ -28,6 +34,6 @@
 
 .contenedor__error-boton:hover{
     color: rgb(255, 123, 0);
-    background: #fff;
+    background: transparent;
     transition: 0.5s ease all;
 }

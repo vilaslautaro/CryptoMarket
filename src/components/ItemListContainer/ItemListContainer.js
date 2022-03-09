@@ -4,18 +4,18 @@ import getItem from '../../api/api';
 import ItemList from './ItemList/ItemList';
 import { useParams } from 'react-router-dom';
 import Lottie from 'lottie-react';
-import { configLoading } from '../../lotties/lotties'
+import { configLoading, configSad, configError } from '../../lotties/lotties'
 import { useContext } from 'react'
 import { SubNavContext } from '../../context/SubNavContext'
 
 function ItemListContainer() {
     const { searchValue } = useContext(SubNavContext)
     const [productos, setProducts] = useState([])
-    const { categoryId } = useParams();
+    const { categoryId, valueSearch} = useParams();
     const [error, setError] = useState('')
     const [validadorLoading, setValidadorLoading] = useState(false)
 
-    // esto dentro de una funcion??
+    
     useEffect(() => {
         setError('')
         getItem().then((productos) => {
@@ -30,7 +30,7 @@ function ItemListContainer() {
                     if (productosBuscados.length === 0) {
                         setError({
                             text: 'Lo sentimos, no encontramos ningun producto que coincida con tu busqueda.',
-                            img: 'https://res.cloudinary.com/dn7qsxzdf/image/upload/v1646716340/CryptoMarket/iconos/nodata_ryqkxg.svg'
+                            lottie: configSad
                         })
                     }
                 }
@@ -41,7 +41,6 @@ function ItemListContainer() {
 
             }
             else if (categoryId !== undefined) {
-                setError('')
                 let productosCategory = productos.filter((producto) => {
                     return producto.category === categoryId;
                 })
@@ -56,8 +55,8 @@ function ItemListContainer() {
                     if (productosBuscados.length === 0) {
                         setError(
                             {
-                                text: 'Lo sentimos, no encontramos ningun producto que coincida con tu busqueda.',
-                                img: 'https://res.cloudinary.com/dn7qsxzdf/image/upload/v1646716340/CryptoMarket/iconos/nodata_ryqkxg.svg'
+                                text: 'Lo sentimos, no encontramos ningun producto que coincida con tu busqueda en esta categoria.',
+                                lottie: configSad
                             })
                     }
                 }
@@ -71,11 +70,11 @@ function ItemListContainer() {
             setValidadorLoading(true)
             setError(
                 {
-                    text: 'Lo sentimos, no encontramos ningun producto que coincida con tu busqueda.',
-                    img: 'https://res.cloudinary.com/dn7qsxzdf/image/upload/v1646717235/CryptoMarket/iconos/error_nrioro.svg'
+                    text: 'Error, no ha sido posible cargar los productos.',
+                    lottie: configError
                 })
         });
-    }, [categoryId, searchValue]);
+    }, [categoryId, searchValue, valueSearch]);
 
 
     return (
@@ -86,11 +85,7 @@ function ItemListContainer() {
                 {error === '' ? null
                     :
                     <div className='container__errorSearch'>
-                        <img
-                            className='container__errorImg'
-                            alt="sin data"
-                            src={error.img}
-                        />
+                        <Lottie {...error.lottie} className='container__errorImg' />
                         <p>{error.text}</p>
                     </div>
                 }

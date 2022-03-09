@@ -12,6 +12,7 @@ function FormInCart() {
     const [nombre, setNombre] = useState('')
     const [telefono, setTelefono] = useState('')
     const [email, setEmail] = useState('')
+    let emailLowerCase = email.toLowerCase()
 
     const [nombreError, setNombreError] = useState('')
     const [telefonoError, setTelefonoError] = useState('')
@@ -58,8 +59,8 @@ function FormInCart() {
 
     function validarFormulario() {
         limpiarErrores()
-
-        if (nombre === "" || nombre.length < 3 || email === "" || email.length < 10 || email.includes('@') === false || email.includes('.com') === false || telefono === "" || telefono.length < 6) {
+        
+        if (nombre === "" || nombre.length < 3 || emailLowerCase === "" || emailLowerCase.length < 10 || emailLowerCase.includes('@') === false || emailLowerCase.includes('.com') === false || telefono === "" || telefono.length < 6) {
 
             if (nombre === "") {
                 inputNombre.current.classList.add('error')
@@ -77,13 +78,13 @@ function FormInCart() {
                 setTelefonoError(`El numero de celular debe tener al menos 6 caracteres, y has introducido ${telefono.length}.`)
             }
             
-            if (email === "") {
+            if (emailLowerCase === "") {
                 inputEmail.current.classList.add('error')
                 setEmailError(`No has completado este campo.`)
-            } else if (email.length < 10) {
+            } else if (emailLowerCase.length < 10) {
                 inputEmail.current.classList.add('error')
-                setEmailError(`El correo electrónico debe tener al menos 10 caracteres, y has introducido ${email.length}.`)
-            } else if (email.includes('@') === false || email.includes('.com') === false) {
+                setEmailError(`El correo electrónico debe tener al menos 10 caracteres, y has introducido ${emailLowerCase.length}.`)
+            } else if (emailLowerCase.includes('@') === false || emailLowerCase.includes('.com') === false) {
                 inputEmail.current.classList.add('error')
                 setEmailError('Email invalido.')
             }

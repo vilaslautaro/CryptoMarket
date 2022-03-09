@@ -17,7 +17,7 @@ function ItemDetail({ producto }) {
         añadirProductoAlCarrito(cantidad, producto)
         enviarMensaje('Tu producto fue cargado al carrito de manera exitosa', 'mostrar', 2000)
     }
-    
+
     return (
         <div className='container__Box'>
             <img className="img__Product" src={producto.picture} alt='imagen producto' />
@@ -31,8 +31,10 @@ function ItemDetail({ producto }) {
                     </div>
                 </div>
                 {
-                    !cantidadDeProductosEnviadosAlCarrito ?
-                        <ItemCount stock={producto.stock} initial={1} addCart={añadirAlCarrito} /> :
+                    !cantidadDeProductosEnviadosAlCarrito
+                        ?
+                        <ItemCount stock={producto.stock} initial={1} addCart={añadirAlCarrito} />
+                        :
                         <Link className="linkCart__Product" to="/cart">Ir al carrito</Link>
                 }
             </div>

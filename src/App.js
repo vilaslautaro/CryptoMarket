@@ -8,8 +8,8 @@ import CartContextProvider from './context/CartContext'
 import Cart from './components/Cart/Cart';
 import { MessageContextProvider } from './context/MessageContext'
 import Message from './components/Message/Message'
-import AddItemContainer from './components/AddItemContainer/AddItemContainer'
 import { SubNavContextProvider } from './context/SubNavContext';
+import Footer from './components/Footer/Footer'
 
 
 function App() {
@@ -24,12 +24,13 @@ function App() {
               <Routes>
                 <Route path="/" element={<ItemListContainer />} />
                 <Route path="/category/:categoryId" element={<ItemListContainer />} />
+                <Route path="/search/:valueSearch" element={<ItemListContainer />} />
                 <Route path="/producto/:productId" element={<ItemDetailContainer />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="*" element={<Error404 />} />
-                <Route path="/product/add" element={<AddItemContainer />} />
               </Routes>
             </main>
+            <Footer />
           </div>
         </CartContextProvider>
       </SubNavContextProvider>

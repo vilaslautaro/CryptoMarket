@@ -5,14 +5,15 @@ import { Link } from 'react-router-dom'
 import FormInCart from './FormInCart/FormInCart';
 import ContainerProductInCart from './ContainerProductInCart/ContainerProductInCart'
 import Lottie from "lottie-react";
-import {configEmptyCart} from "./../../lotties/lotties";
+import {configEmptyCart, configSuccess} from "./../../lotties/lotties";
 
 function Cart() {
     const { cart, idCompra } = useContext(CartContext)
 
     function messageID(id) {
         return (
-            <>
+            <>  
+                <Lottie {...configSuccess} />
                 <p className='text__success'>Tu compra ha sido exitosa. Gracias por confiar en nosotros!</p>
                 <p className='text__success'>El ID de tu compra es: <span className='text__id'>{id}</span></p>
             </>

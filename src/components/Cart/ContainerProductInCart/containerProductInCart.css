@@ -3,6 +3,15 @@
     margin-bottom: 50px;
 }
 
+body.dark .cajaProducto__descripcion,
+body.dark .cajaProducto__cantidad,
+body.dark .cajaProducto__subtotal,
+body.dark .contenedor__precioTotal,
+body.dark .cajaProducto__titulo{
+    color: #fff;
+    transition: 0.5s ease;
+}
+
 .cajaProducto{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -38,6 +47,7 @@
     text-transform: uppercase;
     font-size: 22px;
     color: #000;
+    transition: 0.5s ease;
     text-align: start;
     margin-bottom:10px;
 }
@@ -45,6 +55,7 @@
     text-transform: uppercase;
     font-size: 18px;
     color: #000;
+    transition: 0.5s ease;
     margin-bottom:50px;
     text-align: start;
 }
@@ -68,6 +79,7 @@
 .cajaProducto__cantidad{
     text-transform: capitalize;
     font-size: 25px;
+    transition: 0.5s ease;
     color: #000;
 }
 
@@ -75,6 +87,7 @@
     text-transform: capitalize;
     font-size: 25px;
     color: #000;
+    transition: 0.5s ease;
     font-weight: 600;
     margin-bottom:50px;
 }
@@ -88,6 +101,7 @@
 .contenedor__precioTotal{
     font-size: 30px;
     text-align: end;
+    transition: 0.5s ease;
     font-weight: 600;
     margin:20px 15px 0 0px;
     padding-bottom: 20px;

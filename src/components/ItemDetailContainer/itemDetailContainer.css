@@ -1,6 +1,19 @@
+body.dark .title__SectionProduct{
+    transition: 0.5s ease;
+    color: #fff;
+    background: transparent;
+}
+
+body.dark .container__Product{
+    transition: 0.5s ease;
+    color: #fff;
+    background: transparent;
+}
+
 .title__SectionProduct{
     background: rgb(230, 230, 230);
     margin: 0;
+    transition: 0.5s ease;
     text-transform: capitalize;
     font-size: 35px;
     font-weight: 600;
@@ -10,10 +23,17 @@
 .container__Product{
     padding-bottom: 30px;
     display: grid;
+    transition: 0.5s ease;
     justify-content: center;
     background: rgb(230,230,230);
 }
 
 .loading{
     font-size: 30px;
+}
+
+.text__error{
+    margin: 5px 0;
+    font-size: 20px;
+    font-weight: 600;
 }

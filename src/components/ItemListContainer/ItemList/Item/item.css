@@ -1,5 +1,18 @@
+body.dark .contenedor__Producto{
+    background: #4d4d4d;
+    transition: 0.5s ease;
+}
+
+body.dark .name__Producto,
+body.dark .descripcion__Producto,
+body.dark .precio__Producto{
+    color: #fff;
+    transition: 0.5s ease;
+}
+
 .contenedor__Producto{
     background: #FFF;
+    transition: 0.5s ease;
     display: flex;
     flex-flow: column nowrap;
     width: 300px;
@@ -37,6 +50,7 @@
     margin:10px 0 5px;
     font-size: 16px;
     align-self: flex-start;
+    transition: 0.5s ease;
     text-transform: uppercase;
     font-weight: 500;
     color: #000;
@@ -45,6 +59,7 @@
 .descripcion__Producto{
     margin:2px 0 5px;
     font-size: 13px;
+    transition: 0.5s ease;
     align-self: flex-start;
     text-transform:uppercase;
     font-weight: 400;
@@ -69,6 +84,7 @@
 
 .precio__Producto{
     margin: 0;
+    transition: 0.5s ease;
     padding-left: 5px;
     font-size: 20px;
     align-self: flex-start;

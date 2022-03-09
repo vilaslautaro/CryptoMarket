@@ -1,8 +1,23 @@
-/* formulario */
+body.dark .formUser{
+    background: #4d4d4d;
+    transition: 0.5s ease;
+}
+
+body.dark .formUser__input{
+    background: #2A2B2A;
+    transition: 0.5s ease;
+    color: #fff;
+}
+
+body.dark .formUser__subtitle{
+    transition: 0.5s ease;
+    color: #fff;
+}
 
 .formUser{
     grid-area: formulario;
     margin: 0px auto 50px;
+    transition: 0.5s ease;
     display: grid;
     width: 95%;
     align-content: center;
@@ -34,6 +49,8 @@
     font-size:18px;
     font-weight: 600;
     display: flex;
+    color: #000;
+    transition: 0.5s ease;
     align-items: flex-start;
     padding: 0;
     margin: 5px 0 5px 5px;
@@ -44,12 +61,14 @@
     border-radius: 15px;
     outline: none;
     font-size: 15px;
+    transition: 0.5s ease;
     line-height: 20px;
     width: 100%;
     border: 2px solid rgb(255, 123, 0);
 }
 
 .formUser__input.error{
+    transition: 0.5s ease;
     border-color: rgb(255, 0,0)
 }
 
@@ -57,6 +76,7 @@
     color: rgb(255, 0,0);
     margin: 5px 0;
     font-size: 15px;
+    transition: 0.5s ease;
     text-align: start;
     padding-left: 5px;
     width: 100%;
@@ -78,8 +98,8 @@
 }
 
 .contenedor__btn{
-    background: transparent;
-    color: rgb(255, 123, 0);
+    background: rgb(255, 123, 0);
+    color: #fff;
     border: 1px solid rgb(255, 123, 0);
     border-radius: 10px;
     outline: none;
@@ -92,8 +112,8 @@
 }
 
 .contenedor__btn:hover{
-    background: rgb(255, 123, 0); 
-    color: #fff;
+    background: transparent;
+    color: rgb(255, 123, 0);
     transition: 0.5s ease;
 }
 

@@ -1,5 +1,29 @@
+body.dark .contenedor__Contador{
+    background: #4d4d4d;
+    transition: 0.5s ease;
+}
+
+body.dark .producto__BoxCantidad{
+    background: #2A2B2A;
+    color: #fff;
+    transition: 0.5s ease;
+}
+
+body.dark .btn__AgregarAlCarrito{
+    transition: 0.5s ease;
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+body.dark .btn__AgregarAlCarrito:hover{
+    transition: 0.5s ease;
+    background: transparent;
+    color: rgb(255, 123, 0);
+}
+
 .contenedor__Contador{
     background: #FFF;
+    transition: 0.5s ease;
     border-radius: 15px;
     width: 100%;
 }
@@ -10,7 +34,9 @@
     justify-content: space-between;
     align-items: center;
     margin: 0;
+    transition: 0.5s ease;
     width: 100%;
+    color: #000;
     background: #fff;
     border-radius: 5px;
     padding: 1px;
@@ -43,6 +69,7 @@
     margin: 15px 0 10px;
     padding: 8px 1px 9px;
     font-weight: 500;
+    transition: 0.5s ease;
     width: 100%;
     font-size: 15px;
     cursor: pointer;

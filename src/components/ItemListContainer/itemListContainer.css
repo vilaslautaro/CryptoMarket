@@ -1,8 +1,20 @@
+body.dark .title__Section{
+    color: #fff;
+    transition: 0.5s ease;
+}
+
+body.dark .container__errorSearch{
+    color: #fff;
+    transition: 0.5s ease;
+}
+
 .title__Section{
     margin: 0;
+    transition: 0.5s ease;
     font-size: 40px;
     font-weight: 600;
     padding: 30px;
+    color: #000;
 }
 
 .container__Store{
@@ -12,6 +24,7 @@
 .container__errorSearch{
     font-size: 25px;
     font-weight: 600;
+    transition: 0.5s ease;
     color: #000;
 }
 

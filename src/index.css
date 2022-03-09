@@ -5,6 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: 0.5s ease;
+  background: transparent;
+}
+
+body.dark{
+  background: #2A2B2A;
+  transition: 0.5s ease;
 }
 
 code {

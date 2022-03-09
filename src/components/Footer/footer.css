@@ -1,0 +1,49 @@
+body.dark .container__footer{
+    background: #4d4d4d;
+    transition: 0.5s ease;
+}
+
+body.dark .container__textos{
+    transition: 0.5s ease;
+    font-weight: 600;
+}
+
+body.dark .container__enlace{
+    transition: 0.5s ease;
+    font-weight: 600;
+}
+body.dark .container__enlace:hover{
+    transition: 0.5s ease;
+    color: rgb(255,123,0);
+    filter: brightness(1);
+}
+
+.container__footer{
+    transition: 0.5s ease;
+    margin-top: 170px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    background: rgb(255,123,0);
+}
+
+.container__textos{
+    transition: 0.5s ease;
+    margin: 0;
+    padding: 10px 0;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.container__enlace{
+    cursor: pointer;
+    transition: 0.5s ease;
+    color: #fff;
+    margin-left: 3px;
+}
+
+.container__enlace:hover{
+    transition: 0.5s ease;
+    filter: brightness(0.95);
+}

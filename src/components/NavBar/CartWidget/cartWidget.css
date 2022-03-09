@@ -3,9 +3,29 @@
     margin-right: 30px;
 }
 
+body.dark .imgCarrito{
+    color: #fff;
+    transition: 0.5s ease;
+}
+body.dark .imgCarrito:hover{
+    color: rgb(255, 123, 0);
+    transition: 0.5s ease;
+}
+body.dark .contadorCarrito{
+    background: #fff;
+    color: #000;
+    transition: 0.5s ease;
+}
+body.dark .imgCarrito:hover ~ .contadorCarrito{
+    background: rgb(255, 123, 0);
+    color: #fff;
+    transition: 0.5s ease;
+}
+
 .imgCarrito{
     cursor: pointer;
     color: #747474;
+    transition: 0.5s ease;
     font-size: 30px;
     align-self: center;
 }
@@ -24,6 +44,7 @@
     border-radius: 2px;
     background: #747474;
     font-weight: 500;
+    transition: 0.5s ease;
     position: absolute;
     padding: 3px;
     top: 14px;

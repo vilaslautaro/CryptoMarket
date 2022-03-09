@@ -6,6 +6,7 @@
     display: flex;
     margin: auto 0;
     height: 30px;
+    transition: 0.5s ease;
     padding: 5px;
     align-content: center;
     align-items: center;
@@ -22,6 +23,7 @@
         position: absolute;
         background: #f1f1f1;
         top: 0;
+        transition: 0.5s ease;
         left: 0;
         right: unset;
         border-radius: 100px;
@@ -31,12 +33,14 @@
 
     .caja__BtnMode.active{
         background: rgb(255, 123, 0);
+        transition: 0.5s ease;
         color: #000;  
     }
 
         .caja__BtnMode.active::after{
             right: 0;
-            left: unset;               
+            left: unset;        
+            transition: 0.5s ease;       
         }
 
     .btn__img{
