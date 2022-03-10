@@ -1,7 +1,6 @@
 import { addDoc, collection } from "firebase/firestore"
 import { db } from '../firebase'
-import { createContext, useState, useContext, useEffect } from "react"
-import { MessageContext } from './MessageContext'
+import { createContext, useState, useEffect } from "react"
 import { useLocation } from 'react-router-dom'
 
 export const CartContext = createContext()
@@ -9,33 +8,38 @@ export const CartContext = createContext()
 function CartContextProvider({ children }) {
     const [idCompra, setIdCompra] = useState('')
     const [cart, setCart] = useState([])
-    const { enviarMensaje } = useContext(MessageContext)
-    
-    useEffect(() =>{
+    const [cambioCantidad, setCambioCantidad] = useState(true)
+    const [compraRechazada, setCompraRechazada] = useState(false)
+    const [counterCart, setCounterCart] = useState(0)
+    const URL = useLocation();
+    let contador;
+
+    useEffect(() => {
         CartLocalStorage()
     }, [])
 
-    useEffect(() =>{
+    useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cart))
-    },[cart])
+        let sumandoCantidad = 0
+        cart.forEach((prod) => {
+            sumandoCantidad += prod.cantidad
+        })
+        setCounterCart(sumandoCantidad)
+    }, [cart, cambioCantidad])
 
-
-
-    const URL = useLocation();
-    if (idCompra !== "") {
-        if (URL.pathname !== '/cart') {
-            setIdCompra('')
+    useEffect(()=> {
+        if (idCompra !== "" && URL.pathname !== '/cart') {
+                setIdCompra('')
         }
-    }
+    },[idCompra, URL.pathname])
 
 
-    function CartLocalStorage(){
-        if('cart' in localStorage){
+    function CartLocalStorage() {
+        if ('cart' in localStorage) {
             let cartSaved = JSON.parse(localStorage.getItem('cart'))
             setCart([...cartSaved])
         }
     }
-
 
     function añadirProductoAlCarrito(cantidad, producto) {
         if (buscarProductoEnCarrito(producto.id) === false) {
@@ -43,6 +47,8 @@ function CartContextProvider({ children }) {
         } else {
             sumarCantidad(cantidad, producto)
         }
+        cambioCantidad ? setCambioCantidad(false) : setCambioCantidad(true)
+        
     }
 
     const buscarProductoEnCarrito = (id) => {
@@ -53,7 +59,7 @@ function CartContextProvider({ children }) {
         setCart([])
         localStorage.clear();
     }
-    
+
     function quitarProducto(id) {
         setCart(cart.filter((producto) => producto.id !== id))
     }
@@ -70,44 +76,43 @@ function CartContextProvider({ children }) {
         return producto.price * producto.cantidad
     }
 
-    let contador;
     function sumaTotalCarrito() {
         contador = 0
         cart.forEach((prod) => {
-            contador = contador + prod.price * prod.cantidad
+            contador += ( prod.price * prod.cantidad )
         })
         return contador
     }
 
     const enviarCompraFirebase = (user) => {
 
-        let fecha = new Date();
-        let salidaFecha = String(fecha.getDate()).padStart(2, '0') + '/' + String(fecha.getMonth() + 1).padStart(2, '0') + '/' + fecha.getFullYear();
+        let fecha = `${String(new Date().getDate())}/${String(new Date().getMonth() + 1)}/${new Date().getFullYear()}`
 
         const filtroProductoYCantidad = cart.map(producto => (`Producto: "${producto.title}" - Cantidad: ${producto.cantidad}`))
 
-        const datosUsuario = `Nombre: ${user.nombre} - Telefono: ${user.telefono} - Email: ${user.email}`
+        const {nombre, telefono, email} = user
 
-        const FechaYContador = `La compra fue realizada el: ${salidaFecha} y el precio final es de: $${contador}`
+        const datosUsuario = `Nombre: ${nombre} - Telefono: ${telefono} - Email: ${email}`
 
-        const DatosCompra = [...filtroProductoYCantidad, FechaYContador, datosUsuario]
+        const fechaYContador = `La compra fue realizada el: ${fecha} y el precio final es de: $${contador}`
 
-        const ArrayDatosCompra = {...DatosCompra}
+        const datosCompra = [...filtroProductoYCantidad, fechaYContador, datosUsuario]
 
-        addDoc(collection(db, 'compras'), ArrayDatosCompra)
+        const arrayDatosCompra = { ...datosCompra }
+
+        addDoc(collection(db, 'compras'), arrayDatosCompra)
             .then((resolve) => {
-                console.log(ArrayDatosCompra)
-                setIdCompra(resolve._key.path.segments[1])
+                setIdCompra(resolve.id)
                 clearCart()
+                setCompraRechazada(false)
             })
-            .catch((error) => {
-                console.log(error)
-                enviarMensaje('Lo sentimos ha habido un error al momento de procesar tu compra', 'mostrar-grande', 5000)
+            .catch(() => {
+                setCompraRechazada(true)
             })
     }
 
     return (
-        <CartContext.Provider value={{ cart, añadirProductoAlCarrito, clearCart, quitarProducto, sumaTotalCarrito, subTotal, enviarCompraFirebase, idCompra, setIdCompra }}>
+        <CartContext.Provider value={{ cart, añadirProductoAlCarrito, clearCart, quitarProducto, sumaTotalCarrito, subTotal, enviarCompraFirebase, idCompra, setIdCompra, compraRechazada, setCompraRechazada, counterCart }}>
             {children}
         </CartContext.Provider>
     )

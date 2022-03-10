@@ -7,7 +7,7 @@ import { configSad } from '../../lotties/lotties'
 import ItemDetail from './ItemDetail/ItemDetail';
 
 function ItemDetailContainer() {
-    const [product, setProduct] = useState([]);
+    const [producto, setProducto] = useState([]);
     const { productId } = useParams();
     const [error, setError] = useState('')
 
@@ -15,19 +15,16 @@ function ItemDetailContainer() {
         getItem()
             .then(function (product) {
                 const productoEncontrado = product.find((p) => p.id.toString() === productId);
-                setProduct(productoEncontrado);
+                setProducto(productoEncontrado);
             })
-            .catch((error) => {
-                console.log(error);
-                setError('Error, el producto no ha sido encontrado.')
-            }, [productId]);
-    })
+            .catch(() => setError('Error, el producto no ha sido encontrado.'))
+    }, [productId]);
 
     return (
         <div>
-            <h2 className="title__SectionProduct">{product.subcategory}</h2>
+            <h2 className="title__SectionProduct">{producto.subcategory}</h2>
             <div className="container__Product">
-                {<ItemDetail producto={product} />}
+                {<ItemDetail producto={producto} />}
                 {error === "" ? null
                     :
                     <>

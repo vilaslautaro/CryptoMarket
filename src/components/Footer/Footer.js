@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="container__footer">
             <p className="container__textos">Todos los derechos reservados por CryptoMarket {año}</p>
             <p className="container__textos">Sitio web realizado por
-                <a href="https://vilaslautaro.github.io" target="_blank" rel="noopener noreferrer" className="container__enlace">Lautaro Vilas</a>
+                <a href="https://lautarovilas.com" target="_blank" rel="noopener noreferrer" className="container__enlace">Lautaro Vilas</a>
             </p>
         </div>
     )

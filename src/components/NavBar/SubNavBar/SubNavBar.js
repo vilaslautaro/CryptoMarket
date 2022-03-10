@@ -1,6 +1,5 @@
 import './subNavBar.css'
-import { useRef, useState } from 'react'
-import { useContext } from 'react'
+import { useRef, useState, useContext } from 'react'
 import { SubNavContext } from '../../../context/SubNavContext'
 import { Link } from 'react-router-dom';
 

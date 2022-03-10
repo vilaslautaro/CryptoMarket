@@ -33,11 +33,11 @@ export default function ButtonMode() {
         <>
             <button ref={btnMode} onClick={modoOscuro} className='caja__BtnMode'>
                 <span>
-                    <img alt="sol" className='btn__img Sun' src='https://res.cloudinary.com/dn7qsxzdf/image/upload/v1644257513/CryptoMarket/iconos/sun_dkwveg.png'>
+                    <img alt="bitcoin" className='btn__img bitcoin' src='https://res.cloudinary.com/dn7qsxzdf/image/upload/v1646889003/CryptoMarket/iconos/bitcoin_r9llix.png'>
                     </img>
                 </span>
                 <span>
-                    <img alt="luna" className='btn__img Moon' src='https://res.cloudinary.com/dn7qsxzdf/image/upload/v1644257513/CryptoMarket/iconos/moon_t1sjur.png'>
+                    <img alt="ethereum" className='btn__img ethereum' src='https://res.cloudinary.com/dn7qsxzdf/image/upload/v1646889193/CryptoMarket/iconos/ethereum_jkpr8q.png'>
                     </img>
                 </span>
             </button>

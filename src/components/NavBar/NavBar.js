@@ -9,8 +9,7 @@ import { SubNavContext } from '../../context/SubNavContext'
 export default function NavBar() {
     const { searchValue, setSearchValue } = useContext(SubNavContext)
 
-    function resetSearchValue(e){
-            e.preventDefault()
+    function resetSearchValue(){
             setSearchValue('')
     }
 

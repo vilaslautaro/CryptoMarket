@@ -3,6 +3,7 @@
     margin-bottom: 50px;
 }
 
+
 body.dark .cajaProducto__descripcion,
 body.dark .cajaProducto__cantidad,
 body.dark .cajaProducto__subtotal,
@@ -12,14 +13,23 @@ body.dark .cajaProducto__titulo{
     transition: 0.5s ease;
 }
 
+body.dark .cajaProducto:hover{
+    transition: 0.5s ease;
+    background: #4d4d4d;;
+}
+
 .cajaProducto{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     border-bottom: 1px solid rgb(255, 123, 0);
-    /* height: 100%; */
-    margin: 5px 0 0px;
-    padding: 0 0 5px;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.cajaProducto:hover{
+    background: rgb(194, 194, 194);
+    transition: 0.5s ease;
 }
 
 .cajaProducto__imagen{

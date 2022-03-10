@@ -5,11 +5,14 @@ import { useContext } from 'react'
 import { CartContext } from '../../../context/CartContext';
 
 function CartWidget() {
-    const { cart } = useContext(CartContext)
+    const { counterCart } = useContext(CartContext)
+
+
+
     return (
         <Link className="enlace__Carrito" to={'/cart'} >
                 <i className="imgCarrito fas fa-shopping-cart"></i>
-                <span className={cart.length === 0 ? 'contadorVacio' : 'contadorCarrito'}>{cart.length}</span>
+                <span className={counterCart === 0 ? 'contadorVacio' : 'contadorCarrito'}>{counterCart}</span>
         </Link>
     );
 }
