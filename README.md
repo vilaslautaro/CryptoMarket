@@ -48,18 +48,14 @@ Los usuarios deben ser capaces de:
 ### Construido con
 
 - HTML5
-- Propiedades personalizadas de CSS
-- CSS Grid
-- Flexbox
+- CSS Native
 - Javascript.
 - ReactJS:
-    - Hooks utilizados: useState, useEffect, useContext, useRef, useParams, useLocation.
+    - Hooks utilizados: useState, useEffect, useContext, useRef, useParams, useLocation, useNavigate.
 - Firebase: Utilizado como base de datos para los productos y el formulario.
 
-#### Librerias:
-- FontAwesome: es una libreria que brinda iconos personalizables (podes manipular el color y el tamaño desde css facilmente), en este caso obtuve y utilicé el icono del carrito de compras.
-
 #### Librerias de ReactJS:
+- react-fontawesome: es una libreria que brinda iconos personalizables (podes manipular el color y el tamaño desde css facilmente).
 - react-router-dom
 - lottie-react: Libreria de animaciones
 
