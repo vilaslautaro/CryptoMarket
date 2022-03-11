@@ -53,9 +53,6 @@ export default function NavBar() {
                         <NavLink className='menu__Enlaces' onClick={clickLinksCerrarMenu} to={'/category/service'}>
                             <li className='menu__Categorias'>Servicios</li>
                         </NavLink>
-                        <NavLink className='menu__Enlaces' onClick={clickLinksCerrarMenu} to={'/'}>
-                            <li className='menu__Categorias'>Contacto</li>
-                        </NavLink>
                         {menuAbierto
                             ?   <Link onClick={clickLinksCerrarMenu} to={'/'}>
                                     <img alt="logo" className='nav__Logo-movil' src='https://res.cloudinary.com/dn7qsxzdf/image/upload/v1644257552/CryptoMarket/logos/logo_kny4xe.png'></img>
