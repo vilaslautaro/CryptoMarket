@@ -34,13 +34,15 @@ body.dark .linkCart__Product:hover{
     color: rgb(255, 123, 0);
 }
 
+
 .container__Box{
-    display: flex;
-    display: row wrap;
+    display: grid;
+    grid-template-columns: 50% 50%;
     background: #fff;
     transition: 0.5s ease;
     border-radius: 15px;
-    width: 900px;
+    width: 100%;
+    margin: 0 auto;
     box-shadow: 1px 1px 10px #000;
 }
 
@@ -51,8 +53,8 @@ body.dark .linkCart__Product:hover{
 }
 
 .img__Product{
-    max-width: 500px;
-    max-height: 500px;
+    width: 100%;
+    height: 100%;
     transition: 0.5s ease;
     margin: 0;
     border-radius: 15px 0 0 15px;
@@ -62,11 +64,11 @@ body.dark .linkCart__Product:hover{
 .box__Product{
         background: #FFF;
         border-radius: 15px;
-        width: 100%;
+        font-size: 16px;
         transition: 0.5s ease;
         flex-flow: column wrap;
-        padding: 0 15px;
-        margin: 45px 0;
+        padding: 40px 15px 10px;
+        margin: 0;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
@@ -79,19 +81,19 @@ body.dark .linkCart__Product:hover{
 }
 
 .name__Product{
-    font-size: 30px;
+    font-size: 1.875em;
     text-transform: uppercase;
     margin: 0px 0;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     font-weight: 500;
     transition: 0.5s ease;
     align-self: flex-start;
     color: #000;
 }
 .descripcion__Product{
-    font-size: 18px;
+    font-size: 1.125em;
     margin: 0px 0;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     transition: 0.5s ease;
     text-transform:initial;
     font-weight: 400;
@@ -101,15 +103,15 @@ body.dark .linkCart__Product:hover{
 .box__Price{
     margin: 0px 0;
     display: flex;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
 }
 
 .img__Cripto{
-    width: 40px;
-    height: 40px;
+    width: 2.5em;
+    height: 2.5em;
     padding-top: 4px;
     margin: 0;
 }
@@ -117,7 +119,7 @@ body.dark .linkCart__Product:hover{
 .precio__Product{
     margin: 0;
     padding-left: 10px;
-    font-size: 40px;
+    font-size: 2em;
     transition: 0.5s ease;
     color: #000;
     font-weight: 400;
@@ -129,13 +131,15 @@ body.dark .linkCart__Product:hover{
     border: 1px solid rgb(255, 123, 0);
     border-radius: 5px;
     outline: none;
+    text-align: center;
+    font-size: 15px !important;
     margin: 15px 0 10px;
     transition: 0.5s ease;
     padding: 8px 1px 9px;
     text-decoration: none;
     font-weight: 500;
     width: 100%;
-    font-size: 15px;
+    font-size: 0.9375em;
     cursor: pointer;
 }
 
@@ -144,3 +148,35 @@ body.dark .linkCart__Product:hover{
     color: #fff;
     transition: 0.5s ease;
 }
+
+@media screen and (max-width: 900px) {
+    .box__Product{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .container__Box{
+        grid-template-columns: 100%;
+        width: 80%;
+    }
+    .img__Product{
+        height: 250px;
+        border-radius: 15px 15px 0 0;
+    }
+    .box__Product{
+        text-align: start;
+        font-size: 10px;
+        padding-top: 20px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .container__Box{
+        width: 100%;
+    }
+    .img__Product{
+        height: 200px;
+    }
+}
+

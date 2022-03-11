@@ -10,31 +10,35 @@ import { MessageContextProvider } from './context/MessageContext'
 import Message from './components/Message/Message'
 import { SubNavContextProvider } from './context/SubNavContext';
 import Footer from './components/Footer/Footer'
+import { ScreenWidthProvider } from './context/screenWidth';
+
 
 
 function App() {
   return (
-    <MessageContextProvider>
-      <SubNavContextProvider>
-        <CartContextProvider>
-          <div className="App">
-            <NavBar />
-            <Message />
-            <main>
-              <Routes>
-                <Route path="/" element={<ItemListContainer />} />
-                <Route path="/category/:categoryId" element={<ItemListContainer />} />
-                <Route path="/search/:valueSearch" element={<ItemListContainer />} />
-                <Route path="/producto/:productId" element={<ItemDetailContainer />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="*" element={<Error404 />} />
-              </Routes>
-            </main>
-            <Footer />
-          </div>
-        </CartContextProvider>
-      </SubNavContextProvider>
-    </MessageContextProvider>
+    <ScreenWidthProvider>
+      <MessageContextProvider>
+        <SubNavContextProvider>
+          <CartContextProvider>
+            <div className="App">
+              <NavBar />
+              <Message />
+              <main>
+                <Routes>
+                  <Route path="/" element={<ItemListContainer />} />
+                  <Route path="/category/:categoryId" element={<ItemListContainer />} />
+                  <Route path="/search/:valueSearch" element={<ItemListContainer />} />
+                  <Route path="/producto/:productId" element={<ItemDetailContainer />} />
+                  <Route path="/cart" element={<Cart />} />
+                  <Route path="*" element={<Error404 />} />
+                </Routes>
+              </main>
+              <Footer />
+            </div>
+          </CartContextProvider>
+        </SubNavContextProvider>
+      </MessageContextProvider>
+    </ScreenWidthProvider>
   );
 }
 

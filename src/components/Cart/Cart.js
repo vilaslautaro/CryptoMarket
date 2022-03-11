@@ -13,7 +13,7 @@ function Cart() {
     function messageID(id) {
         return (
             <>  
-                <Lottie {...configSuccess} />
+                <Lottie className='cart__lottie success' {...configSuccess} />
                 <p className='text__success'>Tu compra ha sido exitosa. Gracias por confiar en nosotros!</p>
                 <p className='text__success'>El ID de tu compra es: <span className='text__id'>{id}</span></p>
             </>
@@ -25,9 +25,9 @@ function Cart() {
             {
                 cart.length === 0 ?
                     <div className='contenedorVacio'>
-                        <h1 className='contenedorVacio__titulo'>{idCompra === '' ? <Lottie {...configEmptyCart} /> : messageID(idCompra)}</h1>
+                        {idCompra === '' ? <Lottie className='cart__lottie vacio' {...configEmptyCart} /> : messageID(idCompra)}
                         <Link to="/">
-                            <button className="contenedorVacio__carrito-vacio">Volver a inicio</button>
+                            <button className="contenedorVacio__btn">Volver a inicio</button>
                         </Link>
                     </div>
                     :

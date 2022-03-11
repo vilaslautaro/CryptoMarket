@@ -19,10 +19,6 @@
 .env.test.local
 .env.production.local
 
-# otros
-pendientes.txt
-
-
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

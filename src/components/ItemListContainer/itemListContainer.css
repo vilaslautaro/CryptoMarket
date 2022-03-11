@@ -26,8 +26,28 @@ body.dark .container__errorSearch{
     font-weight: 600;
     transition: 0.5s ease;
     color: #000;
+    margin: 0 20px;
 }
 
 .container__errorImg{
     width: 20%;
+}
+
+
+@media screen and (max-width: 800px){
+    .title__Section{
+        padding: 20px 30px 5px; 
+        font-size: 30px;
+    }
+
+    .container__errorSearch{
+        font-size: 18px;
+    }
+
+    .container__errorImg{
+        width: 50% !important;
+        height: 30%;
+    }
+
+
 }

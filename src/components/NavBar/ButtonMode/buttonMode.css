@@ -4,10 +4,11 @@
     border-radius: 1000px;
     position: relative;
     display: flex;
+    font-size: 16px;
     margin: auto 0;
-    height: 30px;
+    height: 1.875rem;
     transition: 0.5s ease;
-    padding: 5px;
+    padding: 0.3125em;
     align-content: center;
     align-items: center;
     cursor: pointer;
@@ -44,9 +45,9 @@
         }
 
     .btn__img{
-        width: 20px;
-        height: 20px;
-        line-height: 20px;
+        width: 1.25em;
+        height: 1.25em;
+        line-height: 1.25em;
         display: block;
         background: none;
     }
@@ -57,3 +58,9 @@
         .ethereum{
             margin-left: 5px;
         }
+
+@media screen and (max-width: 800px){
+    .caja__BtnMode{
+        font-size: 14px;
+    }
+}

@@ -37,3 +37,21 @@ body.dark .contenedor__error-subtitulo{
     background: transparent;
     transition: 0.5s ease all;
 }
+
+@media screen and (max-width: 600px) {
+    .contenedor__error-lottie{
+        width: 40% !important;
+    }
+    .contenedor__error-titulo{
+        margin: 20px 0 5px;
+        font-size: 35px;
+    }
+    .contenedor__error-subtitulo{
+        margin: 5px 0 10px;
+        font-size: 17px;
+    }
+    .contenedor__error-boton{
+        font-size: 15px;
+        padding: 5px 7px;
+    }
+}

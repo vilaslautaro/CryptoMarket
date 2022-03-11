@@ -46,11 +46,25 @@ body.dark .imgCarrito:hover ~ .contadorCarrito{
     font-weight: 500;
     transition: 0.5s ease;
     position: absolute;
+    top: 8px;
     padding: 3px;
-    top: 14px;
 }
 
     .imgCarrito:hover ~ .contadorCarrito {
         transition: 0.5s ease all;
         background: rgb(255, 123, 0);
     }
+
+@media screen and (max-width: 1000px){
+    .imgCarrito{
+        font-size: 23px;
+    }
+    .enlace__Carrito{
+        margin-right: 20px;
+    }
+    .contadorCarrito{
+        top: 5px;
+        padding: 2px;
+        font-size: 12px;
+    }
+}

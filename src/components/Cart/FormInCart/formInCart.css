@@ -1,12 +1,17 @@
 body.dark .formUser{
-    background: #4d4d4d;
+    /* background: #4d4d4d; */
     transition: 0.5s ease;
 }
 
 body.dark .formUser__input{
-    background: #2A2B2A;
+    background: #4d4d4d;
     transition: 0.5s ease;
     color: #fff;
+}
+
+body.dark .formUser__input::placeholder{
+    transition: 0.5s ease;
+    color: #b8b8b8;
 }
 
 body.dark .formUser__subtitle{
@@ -14,14 +19,16 @@ body.dark .formUser__subtitle{
     color: #fff;
 }
 
+.container__formUser{
+    margin: 0 30px;
+}
+
 .formUser{
     grid-area: formulario;
     margin: 0px auto 50px;
     transition: 0.5s ease;
-    display: grid;
-    width: 95%;
-    align-content: center;
-    padding: 20px 20px 10px 0;
+    width: 100%;
+    padding: 20px 0px 10px 0;
     border: 1px solid rgb(255, 123, 0);
     border-radius: 15px;
 }
@@ -38,11 +45,15 @@ body.dark .formUser__subtitle{
 
 .formUser__subBox{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
+    row-gap: 20px;
+    width: 100%;
 }
 
 .formUser__cajaInput{
-    margin: 0 30px 20px;
+    margin: 0 10px;
+    width: 90%;
 }
 
 .formUser__subtitle{
@@ -87,14 +98,7 @@ body.dark .formUser__subtitle{
 /* botones */
 .contenedor__botones{
     display: flex;
-    flex-flow: row wrap;
-    width: 100%;
     justify-content: flex-end;
-}
-
-.contenedor__cajabtn{
-    margin: 0 0 20px;
-    padding: 0;
 }
 
 .contenedor__btn{
@@ -162,4 +166,15 @@ body.dark .formUser__subtitle{
     background: transparent;
     transition: 0.5s;
     color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+    .formUser__subBox{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .formUser__cajaInput:last-child{
+        margin-bottom: 10px;
+    }
 }

@@ -126,7 +126,7 @@ function FormInCart() {
 
 
     return (
-        <>
+        <div className='container__formUser'>
             {compraRechazada ? alertaCompraRechazada() : null}
             <form className='formUser'>
                 <div className='formUser__title'>Completa el formulario para finalizar tu compra</div>
@@ -157,7 +157,7 @@ function FormInCart() {
                 </div>
 
             </form>
-        </>
+        </div>
     )
 }
 

@@ -14,10 +14,7 @@ body.dark .container__Product{
 }
 
 .container__Product{
-    padding-bottom: 30px;
-    display: grid;
-    transition: 0.5s ease;
-    justify-content: center;
+    margin: 0 30px 50px;
 }
 
 .loading{
@@ -28,4 +25,16 @@ body.dark .container__Product{
     margin: 5px 0;
     font-size: 20px;
     font-weight: 600;
+}
+
+@media screen and (max-width: 950px) {
+    .title__SectionProduct{
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .title__SectionProduct{
+        font-size: 25px;
+    }
 }

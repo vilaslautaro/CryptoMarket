@@ -82,5 +82,17 @@ body.dark .btn__AgregarAlCarrito:hover{
     transition: 0.5s ease;
 }
 
+@media screen and (max-width: 450px) {
+    .btn__Operacion{
+        font-size: 22px;
+    }
+    .btn__AgregarAlCarrito{
+        font-size: 13px;
+    }
+    .texto__Operacion{
+        font-size: 16px;
+    }
+}
+
 
 

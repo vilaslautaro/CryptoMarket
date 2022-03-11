@@ -33,9 +33,13 @@ body.dark .menu__Categorias:hover{
             flex-flow: row wrap;
             max-width: 1400px;
             width: 100%;
-            margin: 10px;
-            padding: 0 10px;
+            margin: 0;
+            padding: 5px 0;
             justify-content: space-between;
+        }
+
+        .btnMenuMovil{
+            display: none;
         }
 
             .nav__Enlace{
@@ -45,6 +49,10 @@ body.dark .menu__Categorias:hover{
 
             .nav__Logo{
                 margin-left: 10px;
+            }
+
+            .nav__Logo-movil{
+                display: none;
             }
 
             .nav__Menu{
@@ -63,7 +71,7 @@ body.dark .menu__Categorias:hover{
                     .menu__Categorias{
                         color: rgb(116, 116, 116);
                         transition: 0.5s ease;
-                        font-size: 20px;
+                        font-size: 1.35rem;
                         border-bottom: 1px solid transparent;
                     }
                         .menu__Categorias:hover{
@@ -76,3 +84,145 @@ body.dark .menu__Categorias:hover{
                 display: flex;
                 flex-flow: row wrap;
             }
+
+@media screen and (max-width: 1000px){
+    
+    .nav_Enlace{
+        display: none;
+    }
+        .btnMenuMovil{
+            display: block;
+            font-size: 23px;
+            transition: 0.5s ease;
+            color: #747474;
+            padding-left: 25px;
+            padding-top: 3px;
+            cursor: pointer;
+        }
+
+        body.dark .btnMenuMovil{
+            transition: 0.5s ease;
+            color: rgb(255, 123, 0);
+        }
+    
+        .header__Nav.movil{
+            position: fixed;
+            top: 0;
+            padding: 10px 0;
+            background: #fff;
+            width: 100%;
+            z-index: 10;
+            transition: 0.5s ease;
+            box-shadow: 1px 0 5px #2A2B2A;
+        }
+
+        body.dark .header__Nav.movil,
+        body.dark .header__Nav.movil .nav__Menu{
+            transition: 0.5s ease;
+            background: #2A2B2A;
+            color: #fff;
+        }
+
+        .header__Nav.movil .menu__Categorias{
+            border-bottom: none;
+        }
+        body.dark .header__Nav.movil .menu__Categorias:hover,
+        body.dark .header__Nav.movil .menu__Categorias:focus{
+            border-bottom: none;
+        }
+
+
+        .header__Nav.movil .nav__Menu{
+            position: absolute;
+            display: none;
+            flex-flow: column nowrap;
+            width: 40%;
+            z-index: 10;
+            height: 100%;
+            align-items: flex-start;
+            transition: 0.5s ease;
+            top: 35px;
+            padding: 10px 0;
+            overflow-y: auto;
+            outline: 2px solid #fff;
+            background-color: rgba(255,255,255);
+        }
+
+        body.dark .header__Nav.movil .nav__Menu{
+            outline: 2px solid #2A2B2A;
+        }
+
+        .nav__Logo-movil{
+            width: 40%;
+            display: block;
+            position: fixed;
+            bottom: 5px;
+            padding: 0 10px;
+            animation: animacionMenuMovil 1s;
+            animation-fill-mode: forwards;
+        }
+
+        .header__Nav.movil .nav__Menu.abierto{
+            display: flex;
+            position: fixed;
+            box-shadow: -5px 0 5px -5px #2A2B2A, 5px 0 5px -5px #2A2B2A;
+            animation: animacionMenuMovil 1s;
+            animation-fill-mode: forwards;
+            transition: 0.5s ease;
+        }
+
+        body.dark .header__Nav.movil .nav__Menu.abierto{
+            box-shadow: -5px 0 5px -5px #fff, 5px 0 5px -5px #fff;
+            transition: 0.5s ease;
+        }
+
+        .header__Nav.movil .menu__Enlaces{
+                text-decoration: none;
+                margin: 10px 0 10px;
+                padding: 0px 10px;
+                width: 100%;
+                text-align: start;
+                box-shadow: 0 3px 2px -2px rgb(255, 123, 0);
+            }
+
+            body.dark .header__Nav.movil .menu__Categorias{
+                color: #fff;
+                transition: 0.5s ease;
+            }
+
+            .header__Nav.movil .menu__Categorias{
+                    color: rgb(255, 123, 0);
+                    transition: 0.5s ease;
+                    font-size: 1.15rem;
+                    border-bottom: 1px solid transparent;
+                }
+                .header__Nav.movil .menu__Categorias:hover{
+                        transition: 0.5s all ease;
+                        color: rgb(255, 123, 0);
+                        border-bottom:1px solid rgb(255, 123, 0);
+                        cursor: pointer;
+                    }
+        .header__Nav.movil .nav__Caja{
+            display: flex;
+            flex-flow: row wrap;
+        }
+}
+
+@keyframes animacionMenuMovil {
+    from { left: -250px}
+    to {left: 0}
+}
+
+@media screen and (max-width: 600px) { 
+    .header__Nav.movil .nav__Menu{
+        width: 100%;
+        }
+
+    .nav__Logo-movil{
+        width: 70%;
+    }
+
+    .btnMenuMovil{
+        font-size: 23px;
+    }
+}
