@@ -37,6 +37,7 @@ body.dark .linkCart__Product:hover{
 
 .container__Box{
     display: grid;
+    max-width: 1000px;
     grid-template-columns: 50% 50%;
     background: #fff;
     transition: 0.5s ease;

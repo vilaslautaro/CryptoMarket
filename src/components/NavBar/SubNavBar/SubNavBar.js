@@ -10,7 +10,7 @@ export default function SubNavBar() {
     const redireccionar = useNavigate()
     const Url = useLocation()
     const UrlActual = Url.pathname
-    const { sendSearch, productoId } = useContext(SubNavContext)
+    const { sendSearch } = useContext(SubNavContext)
     const { width } = useContext(ScreenWidthContext)
 
 
@@ -21,7 +21,7 @@ export default function SubNavBar() {
 
     function enviarBusqueda(event) {
         event.preventDefault()
-        if(UrlActual === '/cart' || UrlActual === `/producto/${productoId}`){
+        if(UrlActual !== '/' || UrlActual !== '/category/product' || UrlActual !== '/category/service'){
             redireccionar('/')
         }
         sendSearch(searchMayus)
@@ -31,7 +31,7 @@ export default function SubNavBar() {
     function pressEnter(e) {
         if (e.key === 'Enter') {
             e.preventDefault();
-            if(UrlActual === '/cart' || UrlActual === `/producto/${productoId}`){
+            if(UrlActual !== '/' || UrlActual !== '/category/product' || UrlActual !== '/category/service'){
                 redireccionar('/')
             }
             sendSearch(searchMayus)
