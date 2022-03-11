@@ -54,7 +54,7 @@ body.dark .form__Search{
             color: #b8b8b8;
         }
 
-            .form__Search:hover, .form__Search:focus{
+            .form__Search:hover{
                 border: 1px solid rgb(255, 123, 0);
                 outline: 1px solid rgb(255, 123, 0);
                 transition: 0.3s all ease;
@@ -62,8 +62,7 @@ body.dark .form__Search{
                 color: #000;
             }
 
-            body.dark .form__Search:hover,
-            body.dark .form__Search:focus{
+            body.dark .form__Search:hover{
                 transition: 0.5s ease;
                 border: 1px solid rgb(255, 123, 0);
             }

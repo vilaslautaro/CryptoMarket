@@ -67,11 +67,25 @@ body.dark .text__success{
         font-size: 15px !important;
         margin: 5px 0;
     }
+    .text__success,
+    .text__id{
+        font-size: 18px;
+    }
     
 }
 
 @media screen and (max-width: 600px) {
     .cart__lottie.vacio{
         width: 70% !important;
-    } 
+    }
+    .cart__lottie.success{
+        width: 40% !important;
+    }
+    .cart__lottie
+    .text__id,
+    .text__success{
+        font-size: 16px;
+        padding: 0 10px;
+    }
 }
+

@@ -1,5 +1,4 @@
 body.dark .formUser{
-    /* background: #4d4d4d; */
     transition: 0.5s ease;
 }
 
@@ -20,7 +19,7 @@ body.dark .formUser__subtitle{
 }
 
 .container__formUser{
-    margin: 0 30px;
+    margin: 40px 30px 0;
 }
 
 .formUser{
@@ -101,31 +100,26 @@ body.dark .formUser__subtitle{
     justify-content: flex-end;
 }
 
-.contenedor__btn{
-    background: rgb(255, 123, 0);
-    color: #fff;
-    border: 1px solid rgb(255, 123, 0);
-    border-radius: 10px;
-    outline: none;
-    margin: 15px 0 10px;
-    padding: 7px 10px 10px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 20px;
-    cursor: pointer;
-}
 
-.contenedor__btn:hover{
+
+.btnComprar:hover{
     background: transparent;
     color: rgb(255, 123, 0);
     transition: 0.5s ease;
 }
 
 .btnComprar{
-    margin-right: 20px;
-    padding-right: 10px;
-    font-weight: 600;
-    border: 2px solid rgb(255, 123, 0);
+    background: rgb(255, 123, 0);
+    color: #fff;
+    border: 1px solid rgb(255, 123, 0);
+    border-radius: 10px;
+    outline: none;
+    padding: 7px 10px 10px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 20px 20px 10px 20px;
 }
 
 .lottie__loading{
@@ -173,8 +167,34 @@ body.dark .formUser__subtitle{
         display: grid;
         grid-template-columns: 1fr;
     }
+    .formUser__cajaInput{
+        text-align: start;
+    }
+
+    .formUser__title{
+        margin: 0 10px 20px 10px;
+        font-size: 17px;
+    }
+
+    .formUser__subtitle{
+        font-size: 15px;
+    }
+
+    .formUser__textError{
+        font-size: 13px;
+    }
 
     .formUser__cajaInput:last-child{
         margin-bottom: 10px;
+    }
+
+    .btnComprar{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .formUser__title{
+        margin: 0 5px 20px 5px;
+        font-size: 17px;
     }
 }

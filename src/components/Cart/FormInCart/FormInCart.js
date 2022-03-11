@@ -112,7 +112,12 @@ function FormInCart() {
                 setEmailError('Email invalido.')
             }
 
-            if (emailConfirmLowerCase !== emailLowerCase) {
+
+            if (emailConfirmLowerCase === "") {
+                inputEmailConfirm.current.classList.add('error')
+                setEmailConfirmError(`No has completado este campo.`)
+            }
+            else if (emailConfirmLowerCase !== emailLowerCase) {
                 inputEmailConfirm.current.classList.add('error')
                 setEmailConfirmError(`El email ingresado no coincide.`)
             }
@@ -153,7 +158,7 @@ function FormInCart() {
                     </div>
                 </div>
                 <div className='contenedor__botones'>
-                    <button className='contenedor__btn btnComprar' type='submit' onClick={validarCompra}>Finalizar compra</button>
+                    <button className='btnComprar' type='submit' onClick={validarCompra}>Finalizar compra</button>
                 </div>
 
             </form>

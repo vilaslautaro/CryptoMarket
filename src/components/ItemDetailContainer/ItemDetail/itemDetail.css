@@ -7,12 +7,12 @@ body.dark .box__Product{
 
 body.dark .container__Box{
     transition: 0.5s ease;
-    box-shadow: 1px 1px 10px rgb(255, 123, 0);
+    box-shadow: 1px 1px 10px #4d4d4d;
 }
 
 body.dark .container__Box:hover{
     transition: 0.5s ease;
-    box-shadow: 1px 1px 15px rgb(255, 123, 0);
+    box-shadow: 1px 1px 15px #4d4d4d;
 }
 
 body.dark .name__Product,
@@ -91,7 +91,7 @@ body.dark .linkCart__Product:hover{
     color: #000;
 }
 .descripcion__Product{
-    font-size: 1.125em;
+    font-size: 1.3em;
     margin: 0px 0;
     padding-bottom: 20px;
     transition: 0.5s ease;

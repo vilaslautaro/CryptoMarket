@@ -1,10 +1,18 @@
 import './subNavBar.css'
 import { useRef, useState, useContext } from 'react'
 import { SubNavContext } from '../../../context/SubNavContext'
-import { Link } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { ScreenWidthContext } from '../../../context/ScreenWidthContext'
 
 export default function SubNavBar() {
-    const { sendSearch } = useContext(SubNavContext)
+    const redireccionar = useNavigate()
+    const Url = useLocation()
+    const UrlActual = Url.pathname
+    const { sendSearch, productoId } = useContext(SubNavContext)
+    const { width } = useContext(ScreenWidthContext)
+
 
     const inputSearch = useRef(null)
     const [search, setSearch] = useState('')
@@ -13,6 +21,9 @@ export default function SubNavBar() {
 
     function enviarBusqueda(event) {
         event.preventDefault()
+        if(UrlActual === '/cart' || UrlActual === `/producto/${productoId}`){
+            redireccionar('/')
+        }
         sendSearch(searchMayus)
         setSearch('')
     }
@@ -20,6 +31,9 @@ export default function SubNavBar() {
     function pressEnter(e) {
         if (e.key === 'Enter') {
             e.preventDefault();
+            if(UrlActual === '/cart' || UrlActual === `/producto/${productoId}`){
+                redireccionar('/')
+            }
             sendSearch(searchMayus)
             setSearch('')
         }
@@ -30,7 +44,9 @@ export default function SubNavBar() {
         <div className='header__SubNav'>
             <form className='subNav__form' noValidate>
                 <input ref={inputSearch} className='form__Search' type='text' onKeyPress={pressEnter} value={search} placeholder='Encontrá el producto que buscas' onChange={handleSearchChange}></input>
-                <Link to={`/search/${search}`} className="form__btnSubmit" onClick={enviarBusqueda}>Buscar</Link>
+                <button className="form__btnSubmit" onClick={enviarBusqueda}>
+                    {width >= 600 ? 'Buscar' : <FontAwesomeIcon className="form__lottie" icon={faMagnifyingGlass} />}
+                </button>
             </form>
         </div>
     )

@@ -1,16 +1,16 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
+import { ScreenWidthProvider } from './context/ScreenWidthContext';
+import { MessageContextProvider } from './context/MessageContext'
+import { SubNavContextProvider } from './context/SubNavContext';
+import CartContextProvider from './context/CartContext'
 import NavBar from './components/NavBar/NavBar';
+import Message from './components/Message/Message'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import Error404 from './components/404/404.js';
-import CartContextProvider from './context/CartContext'
 import Cart from './components/Cart/Cart';
-import { MessageContextProvider } from './context/MessageContext'
-import Message from './components/Message/Message'
-import { SubNavContextProvider } from './context/SubNavContext';
 import Footer from './components/Footer/Footer'
-import { ScreenWidthProvider } from './context/screenWidth';
+import Error404 from './components/404/404.js';
 
 
 

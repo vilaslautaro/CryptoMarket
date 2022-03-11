@@ -17,13 +17,13 @@ function ContainerProductInCart() {
                     </div>
                     <div className='cajaProducto__subcaja-dos'>
                         <span className="cajaProducto__cantidad">Cantidad: {product.cantidad}</span>
-                        <p className="cajaProducto__subtotal">${subTotal(product)}</p>
+                        <p className="cajaProducto__subtotal">Subtotal: ${subTotal(product)}</p>
                     </div>
                 </div>
             ))
             }
             <div className='contenedor__precio'>
-                <button className="contenedor__btn btnVaciar" onClick={clearCart}>Vaciar carrito</button>
+                <button className="btnVaciar" onClick={clearCart}>Vaciar carrito</button>
                 <p className="contenedor__precioTotal">Total ${sumaTotalCarrito()}</p>
             </div>
         </div>
