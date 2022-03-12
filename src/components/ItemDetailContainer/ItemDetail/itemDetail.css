@@ -48,7 +48,6 @@ body.dark .linkCart__Product:hover{
 }
 
 .container__Box:hover{
-    box-shadow: 1px 1px 5px rgb(255, 123, 0);
     transition: 0.5s ease;
     transform: scale(1.01);
 }
@@ -120,7 +119,7 @@ body.dark .linkCart__Product:hover{
 .precio__Product{
     margin: 0;
     padding-left: 10px;
-    font-size: 32px;
+    font-size: 2em;
     transition: 0.5s ease;
     color: #000;
     font-weight: 400;
@@ -164,6 +163,10 @@ body.dark .linkCart__Product:hover{
     .img__Product{
         height: 300px;
         border-radius: 15px 15px 0 0;
+    }
+    .img__Cripto{
+        width: 2.8em;
+        height: 2.8em;
     }
     .box__Product{
         text-align: start;

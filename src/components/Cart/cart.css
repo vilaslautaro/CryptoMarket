@@ -28,7 +28,6 @@ body.dark .text__success{
 .contenedorVacio__btn{
     background: transparent;
     color: rgb(255, 123, 0);
-    box-shadow: 1px 1px 4px rgb(255, 123, 0);
     border: 1px solid rgb(255, 123, 0);
     border-radius: 15px;
     outline: none;

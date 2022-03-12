@@ -33,6 +33,26 @@ body.dark .container__errorSearch{
     width: 20%;
 }
 
+.container__btn{
+    background: transparent;
+    color: rgb(255, 123, 0);
+    border: 1px solid rgb(255, 123, 0);
+    border-radius: 15px;
+    outline: none;
+    transition: 0.5s ease;
+    margin: 15px 0 100px;
+    padding: 10px 15px;
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.container__btn:hover{
+    color: #fff;
+    background: rgb(255, 123, 0);
+    transition: 0.5s ease;
+}
+
 
 @media screen and (max-width: 800px){
     .title__Section{
@@ -47,6 +67,10 @@ body.dark .container__errorSearch{
     .container__errorImg{
         width: 50% !important;
         height: 30%;
+    }
+
+    .container__btn{
+        font-size: 15px !important;
     }
 
 

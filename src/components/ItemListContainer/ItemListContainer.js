@@ -8,7 +8,7 @@ import { configLoading, configSad, configError } from '../../lotties/lotties'
 import { SubNavContext } from '../../context/SubNavContext'
 
 function ItemListContainer() {
-    const { searchValue } = useContext(SubNavContext)
+    const { searchValue, setSearchValue } = useContext(SubNavContext)
     const [productos, setProducts] = useState([])
     const { categoryId } = useParams();
     const [error, setError] = useState('')
@@ -73,7 +73,9 @@ function ItemListContainer() {
             });
     }, [categoryId, searchValue]);
 
-
+    function resetBusqueda(){
+        setSearchValue('')
+    }
     return (
         <div>
             <h2 className="title__Section">Tienda</h2>
@@ -84,6 +86,7 @@ function ItemListContainer() {
                     <div className='container__errorSearch'>
                         <Lottie {...error.lottie} className='container__errorImg' />
                         <p>{error.text}</p>
+                        <button className="container__btn" onClick={resetBusqueda}>Volver a inicio</button>
                     </div>
                 }
             </div>

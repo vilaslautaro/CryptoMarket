@@ -28,7 +28,6 @@ body.dark .precio__Producto{
 .contenedor__Producto:hover{
     transform: scale(1.02);
     transition: 0.7s ease all;
-    box-shadow: 1px 1px 3px rgb(255, 123, 0);
 }
 
 .enlace__Producto{
