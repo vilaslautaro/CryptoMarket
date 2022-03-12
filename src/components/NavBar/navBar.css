@@ -193,7 +193,7 @@ body.dark .menu__Categorias:hover{
             .header__Nav.movil .menu__Categorias{
                     color: rgb(255, 123, 0);
                     transition: 0.5s ease;
-                    font-size: 1.15rem;
+                    font-size: 1.25rem;
                     border-bottom: 1px solid transparent;
                 }
                 .header__Nav.movil .menu__Categorias:hover{

@@ -11,7 +11,6 @@
 body.dark .contenedorVacio__btn{
     background: rgb(255, 123, 0);
     color: #fff;
-    
     transition: 0.5s ease;
 }
 
@@ -66,7 +65,6 @@ body.dark .text__success{
     }
     .contenedorVacio__btn{
         font-size: 15px !important;
-        margin: 5px 0;
     }
     .text__success,
     .text__id{

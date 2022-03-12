@@ -89,12 +89,12 @@ function FormInCart() {
             if (nombre === "") {
                 inputNombre.current.classList.add('error')
                 setNombreError(`No has completado este campo.`)
-            } else if (nombre.length < 8) {
-                inputNombre.current.classList.add('error')
-                setNombreError(`El nombre y apellido ingresado deben tener al menos 8 caracteres, y has introducido ${nombre.length}.`)
             } else if (inputNombre.current.validity.patternMismatch) {
                 inputNombre.current.classList.add('error')
                 setNombreError(`Solo se permite ingresar texto. No se permite ingresar números ni caracteres especiales.`)
+            } else if (nombre.length < 8) {
+                inputNombre.current.classList.add('error')
+                setNombreError(`El nombre y apellido ingresado deben tener al menos 8 caracteres, y has introducido ${nombre.length}.`)
             }
 
             if (telefono === "") {
@@ -111,12 +111,12 @@ function FormInCart() {
             if (emailLowerCase === "") {
                 inputEmail.current.classList.add('error')
                 setEmailError(`No has completado este campo.`)
-            } else if (emailLowerCase.length < 10) {
-                inputEmail.current.classList.add('error')
-                setEmailError(`El correo electrónico debe tener al menos 10 caracteres, y has introducido ${emailLowerCase.length}.`)
             } else if (emailLowerCase.includes('@') === false || emailLowerCase.includes('.com') === false) {
                 inputEmail.current.classList.add('error')
                 setEmailError('El email ingresado no es valido.')
+            } else if (emailLowerCase.length < 10) {
+                inputEmail.current.classList.add('error')
+                setEmailError(`El correo electrónico debe tener al menos 10 caracteres, y has introducido ${emailLowerCase.length}.`)
             }
 
 
