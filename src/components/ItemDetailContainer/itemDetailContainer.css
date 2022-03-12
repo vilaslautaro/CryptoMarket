@@ -14,7 +14,7 @@ body.dark .container__Product{
 }
 
 .container__Product{
-    margin: 0 30px 50px;
+    margin: 0 30px 200px;
 }
 
 .loading{
@@ -33,8 +33,17 @@ body.dark .container__Product{
     }
 }
 
+@media screen and (max-width: 800px){
+    .container__Product{
+        margin-bottom:250px;
+    }
+}
+
 @media screen and (max-width: 450px){
     .title__SectionProduct{
         font-size: 25px;
+    }
+    .container__Product{
+        margin-bottom:100px;
     }
 }
