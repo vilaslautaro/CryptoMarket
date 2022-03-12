@@ -109,6 +109,12 @@ body.dark .form__Search{
         box-shadow: none;
         font-size: 20px;
     }
+    .form__btnSubmit:hover{
+        cursor: pointer;
+        box-shadow: none;
+        transition: none;
+        background: none;
+    }
     body.dark .form__btnSubmit{
         color: rgb(255, 123, 0);
         transition: 0.5s;
