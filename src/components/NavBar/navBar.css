@@ -31,7 +31,7 @@ body.dark .menu__Categorias:hover{
         .header__Nav{
             display: flex;
             flex-flow: row wrap;
-            max-width: 1400px;
+            max-width: 1200px;
             width: 100%;
             margin: 0;
             padding: 5px 0;
@@ -158,7 +158,7 @@ body.dark .menu__Categorias:hover{
             position: fixed;
             bottom: 5px;
             padding: 0 10px;
-            animation: animacionMenuMovil 1s;
+            animation: animacionMenuMovil 0.5s;
             animation-fill-mode: forwards;
         }
 
@@ -166,7 +166,7 @@ body.dark .menu__Categorias:hover{
             display: flex;
             position: fixed;
             box-shadow: -5px 0 5px -5px #2A2B2A, 5px 0 5px -5px #2A2B2A;
-            animation: animacionMenuMovil 1s;
+            animation: animacionMenuMovil 0.5s;
             animation-fill-mode: forwards;
             transition: 0.5s ease;
         }
@@ -179,7 +179,7 @@ body.dark .menu__Categorias:hover{
         .header__Nav.movil .menu__Enlaces{
                 text-decoration: none;
                 margin: 10px 0 10px;
-                padding: 0px 10px;
+                padding: 0px 10px 0 25px;
                 width: 100%;
                 text-align: start;
                 box-shadow: 0 3px 2px -2px rgb(255, 123, 0);

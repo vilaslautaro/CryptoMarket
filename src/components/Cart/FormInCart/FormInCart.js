@@ -82,20 +82,27 @@ function FormInCart() {
 
     function validarFormulario() {
         limpiarErrores()
+        console.log(inputNombre.current.validity.patternMismatch)
 
-        if (nombre === "" || nombre.length < 3 || emailLowerCase === "" || emailLowerCase.length < 10 || emailLowerCase.includes('@') === false || emailLowerCase.includes('.com') === false || emailConfirmLowerCase !== emailLowerCase || telefono === "" || telefono.length < 6) {
+        if (nombre === "" || nombre.length < 8 || inputNombre.current.validity.patternMismatch || emailLowerCase === "" || emailLowerCase.length < 10 || emailLowerCase.includes('@') === false || emailLowerCase.includes('.com') === false || emailConfirmLowerCase !== emailLowerCase || emailConfirmLowerCase.includes('.com') === false || emailConfirmLowerCase.includes('@') === false || isNaN(telefono) || telefono === "" || telefono.length < 6) {
 
             if (nombre === "") {
                 inputNombre.current.classList.add('error')
                 setNombreError(`No has completado este campo.`)
-            } else if (nombre.length < 3) {
+            } else if (nombre.length < 8) {
                 inputNombre.current.classList.add('error')
-                setNombreError(`El nombre ingresado debe tener al menos 3 caracteres, y has introducido ${nombre.length}.`)
+                setNombreError(`El nombre y apellido ingresado deben tener al menos 8 caracteres, y has introducido ${nombre.length}.`)
+            } else if (inputNombre.current.validity.patternMismatch) {
+                inputNombre.current.classList.add('error')
+                setNombreError(`Solo se permite ingresar texto. No se permite ingresar números ni caracteres especiales.`)
             }
 
             if (telefono === "") {
                 inputTelefono.current.classList.add('error')
                 setTelefonoError(`No has completado este campo.`)
+            } else if (isNaN(telefono)) {
+                inputTelefono.current.classList.add('error')
+                setTelefonoError(`Solo se puede ingresar caracteres numericos.`)
             } else if (telefono.length < 6) {
                 inputTelefono.current.classList.add('error')
                 setTelefonoError(`El numero de celular debe tener al menos 6 caracteres, y has introducido ${telefono.length}.`)
@@ -109,15 +116,17 @@ function FormInCart() {
                 setEmailError(`El correo electrónico debe tener al menos 10 caracteres, y has introducido ${emailLowerCase.length}.`)
             } else if (emailLowerCase.includes('@') === false || emailLowerCase.includes('.com') === false) {
                 inputEmail.current.classList.add('error')
-                setEmailError('Email invalido.')
+                setEmailError('El email ingresado no es valido.')
             }
 
 
             if (emailConfirmLowerCase === "") {
                 inputEmailConfirm.current.classList.add('error')
                 setEmailConfirmError(`No has completado este campo.`)
-            }
-            else if (emailConfirmLowerCase !== emailLowerCase) {
+            } else if (emailConfirmLowerCase.includes('@') === false || emailConfirmLowerCase.includes('.com') === false) {
+                inputEmailConfirm.current.classList.add('error')
+                setEmailConfirmError('El email ingresado no es valido.')
+            } else if (emailConfirmLowerCase !== emailLowerCase) {
                 inputEmailConfirm.current.classList.add('error')
                 setEmailConfirmError(`El email ingresado no coincide.`)
             }
@@ -138,22 +147,22 @@ function FormInCart() {
                 <div className='formUser__subBox'>
                     <div className='formUser__cajaInput'>
                         <p className='formUser__subtitle'>Nombre completo</p>
-                        <input ref={inputNombre} value={nombre} placeholder='Juan Suarez' className={nombreError === '' ? 'formUser__input' : 'formUser__input error'} onChange={handleNombreChange} type='text' />
+                        <input ref={inputNombre} value={nombre} placeholder='Juan Suarez' maxlength="25" pattern="[a-zA-Z]+" className={nombreError === '' ? 'formUser__input' : 'formUser__input error'} onChange={handleNombreChange} type='text' />
                         {nombreError === '' ? '' : <div className='formUser__textError'>{nombreError}</div>}
                     </div>
                     <div className='formUser__cajaInput'>
                         <p className='formUser__subtitle'>Celular</p>
-                        <input ref={inputTelefono} value={telefono} placeholder='54 11 500 798' className={telefonoError === '' ? 'formUser__input' : 'formUser__input error'} onChange={handleTelefonoChange} type='tel' />
+                        <input ref={inputTelefono} value={telefono} placeholder='5411500798' pattern="[0,9]+" maxlength="20" className={telefonoError === '' ? 'formUser__input' : 'formUser__input error'} onChange={handleTelefonoChange} type='tel' />
                         {telefonoError === '' ? '' : <div className='formUser__textError'>{telefonoError}</div>}
                     </div>
                     <div className='formUser__cajaInput'>
                         <p className='formUser__subtitle'>Email</p>
-                        <input ref={inputEmail} value={email} placeholder='usuario@gmail.com' className={emailError === '' ? 'formUser__input' : 'formUser__input error'} onChange={handleEmailChange} type='email' />
+                        <input ref={inputEmail} value={email} placeholder='usuario@gmail.com' maxlength="35" className={emailError === '' ? 'formUser__input' : 'formUser__input error'} onChange={handleEmailChange} type='email' />
                         {emailError === '' ? '' : <div className='formUser__textError'>{emailError}</div>}
                     </div>
                     <div className='formUser__cajaInput'>
                         <p className='formUser__subtitle'>Confirmar email</p>
-                        <input ref={inputEmailConfirm} value={emailConfirm} placeholder='usuario@gmail.com' className={emailConfirmError === '' ? 'formUser__input' : 'formUser__input error'} onChange={handleEmailConfirmChange} type='email' />
+                        <input ref={inputEmailConfirm} value={emailConfirm} placeholder='usuario@gmail.com' maxlength="35" className={emailConfirmError === '' ? 'formUser__input' : 'formUser__input error'} onChange={handleEmailConfirmChange} type='email' />
                         {emailConfirmError === '' ? '' : <div className='formUser__textError'>{emailConfirmError}</div>}
                     </div>
                 </div>

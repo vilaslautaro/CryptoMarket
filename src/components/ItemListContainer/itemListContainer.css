@@ -18,7 +18,7 @@ body.dark .container__errorSearch{
 }
 
 .container__Store{
-    padding-bottom: 30px;
+    padding-bottom: 60px;
 }
 
 .container__errorSearch{
@@ -26,7 +26,7 @@ body.dark .container__errorSearch{
     font-weight: 600;
     transition: 0.5s ease;
     color: #000;
-    margin: 0 20px;
+    margin: 0 20px 180px;
 }
 
 .container__errorImg{

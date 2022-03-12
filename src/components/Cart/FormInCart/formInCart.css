@@ -12,6 +12,10 @@ body.dark .formUser__input::placeholder{
     transition: 0.5s ease;
     color: #b8b8b8;
 }
+body.dark .formUser__input:focus{
+    transition: 0.5s ease;
+    filter: brightness(0.8)
+}
 
 body.dark .formUser__subtitle{
     transition: 0.5s ease;
@@ -77,9 +81,14 @@ body.dark .formUser__subtitle{
     border: 2px solid rgb(255, 123, 0);
 }
 
+.formUser__input:focus{
+    transition: 0.5s ease;
+    filter: brightness(0.9)
+}
+
 .formUser__input.error{
     transition: 0.5s ease;
-    border-color: rgb(255, 0,0)
+    border-color: rgb(255, 0,0);
 }
 
 .formUser__textError{
@@ -92,7 +101,6 @@ body.dark .formUser__subtitle{
     width: 100%;
     font-weight: 600;
 }
-
 
 /* botones */
 .contenedor__botones{

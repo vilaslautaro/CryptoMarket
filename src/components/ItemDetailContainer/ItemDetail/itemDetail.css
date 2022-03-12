@@ -156,13 +156,13 @@ body.dark .linkCart__Product:hover{
     }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 600px) {
     .container__Box{
         grid-template-columns: 100%;
         width: 80%;
     }
     .img__Product{
-        height: 250px;
+        height: 300px;
         border-radius: 15px 15px 0 0;
     }
     .box__Product{
@@ -177,7 +177,21 @@ body.dark .linkCart__Product:hover{
         width: 100%;
     }
     .img__Product{
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .img__Product{
         height: 200px;
+    }
+}
+@media screen and (max-width: 250px) {
+    .img__Product{
+        height: 150px;
+    }
+    .name__Product{
+    font-size: 1.575em;
     }
 }
 
