@@ -34,8 +34,8 @@ body.dark .container__errorSearch{
 }
 
 .container__btn{
-    background: transparent;
-    color: rgb(255, 123, 0);
+    background: rgb(255, 123, 0);
+    color: #fff;
     border: 1px solid rgb(255, 123, 0);
     border-radius: 15px;
     outline: none;
@@ -48,8 +48,8 @@ body.dark .container__errorSearch{
 }
 
 .container__btn:hover{
-    color: #fff;
-    background: rgb(255, 123, 0);
+    background: transparent;
+    color: rgb(255, 123, 0);
     transition: 0.5s ease;
 }
 
