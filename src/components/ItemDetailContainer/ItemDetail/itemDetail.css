@@ -120,7 +120,7 @@ body.dark .linkCart__Product:hover{
 .precio__Product{
     margin: 0;
     padding-left: 10px;
-    font-size: 2em;
+    font-size: 32px;
     transition: 0.5s ease;
     color: #000;
     font-weight: 400;
