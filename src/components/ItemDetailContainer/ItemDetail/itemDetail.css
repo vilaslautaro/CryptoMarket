@@ -7,12 +7,12 @@ body.dark .box__Product{
 
 body.dark .container__Box{
     transition: 0.5s ease;
-    box-shadow: 1px 1px 10px #4d4d4d;
+    box-shadow: 1px 1px 3px #000;
 }
 
 body.dark .container__Box:hover{
     transition: 0.5s ease;
-    box-shadow: 1px 1px 15px #4d4d4d;
+    box-shadow: 1px 1px 3px rgb(255, 123, 0);
 }
 
 body.dark .name__Product,
@@ -44,11 +44,11 @@ body.dark .linkCart__Product:hover{
     border-radius: 15px;
     width: 100%;
     margin: 0 auto;
-    box-shadow: 1px 1px 10px #000;
+    box-shadow: 1px 1px 5px #000;
 }
 
 .container__Box:hover{
-    box-shadow: 1px 1px 15px #000;
+    box-shadow: 1px 1px 5px rgb(255, 123, 0);
     transition: 0.5s ease;
     transform: scale(1.01);
 }

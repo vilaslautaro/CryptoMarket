@@ -22,13 +22,13 @@ body.dark .precio__Producto{
     border-radius: 15px;
     margin: 0 30px 60px;
     cursor: pointer;
-    box-shadow: 1px 1px 5px #000;
+    box-shadow: 1px 1px 3px #000;
 }
 
 .contenedor__Producto:hover{
     transform: scale(1.02);
     transition: 0.7s ease all;
-    box-shadow: 1px 1px 5px rgb(255, 123, 0);
+    box-shadow: 1px 1px 3px rgb(255, 123, 0);
 }
 
 .enlace__Producto{
