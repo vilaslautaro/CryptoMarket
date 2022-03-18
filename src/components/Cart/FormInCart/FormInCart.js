@@ -3,6 +3,7 @@ import { useContext, useState, useEffect, useRef } from 'react'
 import { CartContext } from '../../../context/CartContext'
 import Lottie from 'lottie-react'
 import { configError } from '../../../lotties/lotties'
+import ReCaptcha from 'react-google-recaptcha'
 
 function FormInCart() {
     const { enviarCompraFirebase, compraRechazada, setCompraRechazada } = useContext(CartContext)
@@ -11,11 +12,15 @@ function FormInCart() {
     const inputTelefono = useRef(null)
     const inputEmail = useRef(null)
     const inputEmailConfirm = useRef(null)
+    const inputReCaptcha = useRef(null)
+    const divReCaptcha = useRef(null)
 
     const [nombre, setNombre] = useState('')
     const [telefono, setTelefono] = useState('')
     const [email, setEmail] = useState('')
     const [emailConfirm, setEmailConfirm] = useState('')
+    const [reCaptcha, setReCaptcha] = useState(false)
+
     let emailLowerCase = email.toLowerCase()
     let emailConfirmLowerCase = emailConfirm.toLowerCase()
 
@@ -23,14 +28,15 @@ function FormInCart() {
     const [telefonoError, setTelefonoError] = useState('')
     const [emailError, setEmailError] = useState('')
     const [emailConfirmError, setEmailConfirmError] = useState('')
+    const [reCaptchaError, setReCaptchaError] = useState('')
 
     const handleNombreChange = event => setNombre(event.target.value)
     const handleTelefonoChange = event => setTelefono(event.target.value)
     const handleEmailChange = event => setEmail(event.target.value)
     const handleEmailConfirmChange = event => setEmailConfirm(event.target.value)
+    const handleReCaptchaChange = () => inputReCaptcha.current.getValue() ? setReCaptcha(true) : setReCaptcha(false)  
 
     const [user, setUser] = useState({})
-
     useEffect(() => {
         setUser({ nombre, telefono, email })
     }, [nombre, telefono, email])
@@ -68,6 +74,7 @@ function FormInCart() {
         setEmailError('')
         setEmailConfirmError('')
         setTelefonoError('')
+        setReCaptchaError('')
 
         if (inputNombre.current.classList.contains('error') === true) {
             inputNombre.current.classList.remove('error');
@@ -84,12 +91,17 @@ function FormInCart() {
         if (inputTelefono.current.classList.contains('error') === true) {
             inputTelefono.current.classList.remove('error');
         }
+
+        if(divReCaptcha.current.classList.contains('error') === true){
+            divReCaptcha.current.classList.remove('error');
+        }
+
     }
 
     function validarFormulario() {
         limpiarErrores()
 
-        if (nombre === "" || nombre.length < 8 || inputNombre.current.validity.patternMismatch || emailLowerCase === "" || emailLowerCase.length < 10 || emailLowerCase.includes('@') === false || emailLowerCase.includes('.com') === false || emailConfirmLowerCase !== emailLowerCase || emailConfirmLowerCase.includes('.com') === false || emailConfirmLowerCase.includes('@') === false || inputTelefono.current.validity.patternMismatch || telefono === "" || telefono.length < 9) {
+        if (nombre === "" || nombre.length < 8 || inputNombre.current.validity.patternMismatch || emailLowerCase === "" || emailLowerCase.length < 10 || emailLowerCase.includes('@') === false || emailLowerCase.includes('.com') === false || emailConfirmLowerCase !== emailLowerCase || emailConfirmLowerCase.includes('.com') === false || emailConfirmLowerCase.includes('@') === false || inputTelefono.current.validity.patternMismatch || telefono === "" || telefono.length < 9 || reCaptcha === false) {
 
             if (nombre === "") {
                 inputNombre.current.classList.add('error')
@@ -137,6 +149,11 @@ function FormInCart() {
                 setEmailConfirmError(`El email ingresado no coincide.`)
             }
 
+            if(reCaptcha === false){
+                divReCaptcha.current.classList.add('error')
+                setReCaptchaError('Captcha no completado.')
+            }
+
             return false;
 
         } else {
@@ -170,6 +187,15 @@ function FormInCart() {
                         <input ref={inputEmailConfirm} onKeyPress={pressEnter} value={emailConfirm} placeholder='usuario@gmail.com' maxLength="30" className={emailConfirmError === '' ? 'formUser__input' : 'formUser__input error'} onChange={handleEmailConfirmChange} type='email' />
                         {emailConfirmError === '' ? '' : <div className='formUser__textError'>{emailConfirmError}</div>}
                     </div>
+                </div>
+                <div className="container__recaptcha" ref={divReCaptcha}>
+                    <ReCaptcha
+                        className="recaptcha"
+                        ref={inputReCaptcha}
+                        sitekey="6LdG_PAeAAAAAHmFcmNl_ORrqowi0sJ1BbMBs8j1"
+                        onChange={handleReCaptchaChange}
+                        />
+                        {reCaptchaError === '' ? '' : <div className='formUser__textError'>{reCaptchaError}</div>}
                 </div>
                 <div className='contenedor__botones'>
                     <button className='btnComprar' type='submit' onClick={validarCompra}>Finalizar compra</button>

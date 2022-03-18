@@ -58,6 +58,7 @@ Los usuarios deben ser capaces de:
 - react-fontawesome: es una libreria que brinda iconos personalizables (podes manipular el color y el tamaño desde css facilmente).
 - react-router-dom
 - lottie-react: Libreria de animaciones
+- react-google-recaptcha: Lo utilice para la validacion recaptcha de Google en el formulario de compras.
 
   
   

@@ -102,10 +102,17 @@ body.dark .formUser__subtitle{
     font-weight: 600;
 }
 
+.container__recaptcha{
+    display: flex;
+    padding: 25px 0 0;
+    justify-content: center;
+}
+
 /* botones */
 .contenedor__botones{
     display: flex;
-    justify-content: flex-end;
+    padding: 10px 0 0;
+    justify-content: center;
 }
 
 
@@ -194,6 +201,16 @@ body.dark .formUser__subtitle{
 
     .formUser__cajaInput:last-child{
         margin-bottom: 10px;
+    }
+
+    .container__recaptcha{
+        padding: 15px 0 0;
+        margin: 0;
+    }
+
+    .recaptcha{
+        margin: 0;
+        transform: scale(0.9);
     }
 
     .btnComprar{
