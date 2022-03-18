@@ -43,7 +43,7 @@ export default function SubNavBar() {
     return (
         <div className='header__SubNav'>
             <form className='subNav__form' noValidate>
-                <input ref={inputSearch} className='form__Search' type='text' maxlength="20" onKeyPress={pressEnter} value={search} placeholder='Encontrá el producto que buscas' onChange={handleSearchChange}></input>
+                <input ref={inputSearch} className='form__Search' type='text' maxLength="20" onKeyPress={pressEnter} value={search} placeholder='Encontrá el producto que buscas' onChange={handleSearchChange}></input>
                 <button className="form__btnSubmit" onClick={enviarBusqueda}>
                     {width >= 600 ? 'Buscar' : <FontAwesomeIcon className="form__lottie" icon={faMagnifyingGlass} />}
                 </button>

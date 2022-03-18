@@ -144,7 +144,6 @@ function FormInCart() {
         }
     }
 
-
     return (
         <div className='container__formUser'>
             {compraRechazada ? alertaCompraRechazada() : null}
@@ -153,22 +152,22 @@ function FormInCart() {
                 <div className='formUser__subBox'>
                     <div className='formUser__cajaInput'>
                         <p className='formUser__subtitle'>Nombre completo</p>
-                        <input ref={inputNombre} onKeyPress={pressEnter} value={nombre} placeholder='Juan Suarez' maxlength="30" pattern="^[a-zA-Z\s]+" className={nombreError === '' ? 'formUser__input' : 'formUser__input error'} onChange={handleNombreChange} type='text' />
+                        <input ref={inputNombre} onKeyPress={pressEnter} value={nombre} placeholder='Juan Suarez' maxLength="30" pattern="^[a-zA-Z\s]+" className={nombreError === '' ? 'formUser__input' : 'formUser__input error'} onChange={handleNombreChange} type='text' />
                         {nombreError === '' ? '' : <div className='formUser__textError'>{nombreError}</div>}
                     </div>
                     <div className='formUser__cajaInput'>
                         <p className='formUser__subtitle'>Celular</p>
-                        <input ref={inputTelefono} onKeyPress={pressEnter} value={telefono} placeholder='54 11 500 798' pattern="[0-9\s]+" maxlength="17" className={telefonoError === '' ? 'formUser__input' : 'formUser__input error'} onChange={handleTelefonoChange} type='tel' />
+                        <input ref={inputTelefono} onKeyPress={pressEnter} value={telefono} placeholder='54 11 500 798' pattern="[0-9\s]+" maxLength="17" className={telefonoError === '' ? 'formUser__input' : 'formUser__input error'} onChange={handleTelefonoChange} type='tel' />
                         {telefonoError === '' ? '' : <div className='formUser__textError'>{telefonoError}</div>}
                     </div>
                     <div className='formUser__cajaInput'>
                         <p className='formUser__subtitle'>Email</p>
-                        <input ref={inputEmail} onKeyPress={pressEnter} value={email} placeholder='usuario@gmail.com' maxlength="30" className={emailError === '' ? 'formUser__input' : 'formUser__input error'} onChange={handleEmailChange} type='email' />
+                        <input ref={inputEmail} onKeyPress={pressEnter} value={email} placeholder='usuario@gmail.com' maxLength="30" className={emailError === '' ? 'formUser__input' : 'formUser__input error'} onChange={handleEmailChange} type='email' />
                         {emailError === '' ? '' : <div className='formUser__textError'>{emailError}</div>}
                     </div>
                     <div className='formUser__cajaInput'>
                         <p className='formUser__subtitle'>Confirmar email</p>
-                        <input ref={inputEmailConfirm} onKeyPress={pressEnter} value={emailConfirm} placeholder='usuario@gmail.com' maxlength="30" className={emailConfirmError === '' ? 'formUser__input' : 'formUser__input error'} onChange={handleEmailConfirmChange} type='email' />
+                        <input ref={inputEmailConfirm} onKeyPress={pressEnter} value={emailConfirm} placeholder='usuario@gmail.com' maxLength="30" className={emailConfirmError === '' ? 'formUser__input' : 'formUser__input error'} onChange={handleEmailConfirmChange} type='email' />
                         {emailConfirmError === '' ? '' : <div className='formUser__textError'>{emailConfirmError}</div>}
                     </div>
                 </div>
