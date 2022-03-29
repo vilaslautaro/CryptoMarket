@@ -195,7 +195,7 @@ function FormInCart() {
                         sitekey="6LdG_PAeAAAAAHmFcmNl_ORrqowi0sJ1BbMBs8j1"
                         onChange={handleReCaptchaChange}
                         />
-                        {reCaptchaError === '' ? '' : <div className='formUser__textError'>{reCaptchaError}</div>}
+                        {reCaptchaError === '' ? '' : <div className='formUser__textError captcha'>{reCaptchaError}</div>}
                 </div>
                 <div className='contenedor__botones'>
                     <button className='btnComprar' type='submit' onClick={validarCompra}>Finalizar compra</button>
